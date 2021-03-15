@@ -1,14 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Entities/Characters/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Entities/Characters/Player/Battery.png" type="Texture" id=2]
 [ext_resource path="res://Entities/Characters/Player/Foot.png" type="Texture" id=3]
 [ext_resource path="res://Entities/Characters/Player/Face.png" type="Texture" id=4]
+[ext_resource path="res://Entities/Characters/Player/PowerIndicator.tscn" type="PackedScene" id=5]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 16, 63 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"player",
+]]
+z_index = 2
 script = ExtResource( 1 )
 velocity_max = Vector2( 25, 75 )
 h_accel = 2
@@ -22,7 +26,7 @@ max_lean_lerp_val = 1000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -15 )
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 __meta__ = {
 "_edit_ik_": true
 }
@@ -32,6 +36,7 @@ wait_time = 0.15
 one_shot = true
 
 [node name="BatteryPivot" type="Node2D" parent="."]
+z_index = 1
 
 [node name="Battery" type="Sprite" parent="BatteryPivot"]
 position = Vector2( 0, -32 )
@@ -44,6 +49,39 @@ __meta__ = {
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, 32 )
 texture = ExtResource( 4 )
+
+[node name="PowerIndicators" type="VBoxContainer" parent="BatteryPivot"]
+margin_left = -16.0
+margin_top = -56.0
+margin_right = 16.0
+margin_bottom = 24.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PowerIndicator1" parent="BatteryPivot/PowerIndicators" instance=ExtResource( 5 )]
+id = 1
+
+[node name="PowerIndicator2" parent="BatteryPivot/PowerIndicators" instance=ExtResource( 5 )]
+margin_top = 16.0
+margin_bottom = 32.0
+id = 2
+
+[node name="PowerIndicator3" parent="BatteryPivot/PowerIndicators" instance=ExtResource( 5 )]
+margin_top = 32.0
+margin_bottom = 48.0
+id = 3
+
+[node name="PowerIndicator4" parent="BatteryPivot/PowerIndicators" instance=ExtResource( 5 )]
+margin_top = 48.0
+margin_bottom = 64.0
+id = 4
+
+[node name="PowerIndicator5" parent="BatteryPivot/PowerIndicators" instance=ExtResource( 5 )]
+margin_top = 64.0
+margin_bottom = 80.0
+id = 5
 
 [node name="Feet" type="Node2D" parent="."]
 

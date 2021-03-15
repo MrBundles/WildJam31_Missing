@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Entities/Objects/Cable/Cable.gd" type="Script" id=1]
+
+[sub_resource type="Curve2D" id=1]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array(  )
+}
+
+[node name="Cable" type="Path2D"]
+position = Vector2( -167.111, 0 )
+scale = Vector2( 1.11111, 1 )
+z_index = -1
+curve = SubResource( 1 )
+script = ExtResource( 1 )
+power_progress_mult = 500
+on_color = Color( 0.356863, 0.682353, 0.482353, 1 )
+off_color = Color( 0.2, 0.207843, 0.2, 1 )
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]

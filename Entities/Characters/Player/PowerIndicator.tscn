@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Entities/Characters/Player/PowerIndicator.gd" type="Script" id=1]
+
+[sub_resource type="ImageTexture" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+border_width_top = 8
+border_width_bottom = 8
+border_color = Color( 0.94902, 0.0862745, 0.0862745, 0 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 4.0
+bg_color = Color( 0.356863, 0.682353, 0.482353, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.8, 0.8, 0.8, 0 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="PowerIndicator" type="HSlider"]
+margin_right = 32.0
+margin_bottom = 16.0
+custom_icons/grabber = SubResource( 1 )
+custom_styles/slider = SubResource( 2 )
+custom_styles/grabber_area = SubResource( 3 )
+scrollable = false
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+delay_mult = 0.05
+
+[node name="Tween" type="Tween" parent="."]

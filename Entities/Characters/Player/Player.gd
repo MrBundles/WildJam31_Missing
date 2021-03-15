@@ -28,6 +28,9 @@ export var leg_color = Color(1,1,1,1)
 export var leg_width = 10
 export var max_lean_lerp_val = 1.0
 
+var socket_align_x = -1.0
+var plugged_in = false
+
 
 # main functions --------------------------------------
 func _ready():
@@ -41,6 +44,8 @@ func _physics_process(delta):
 	move_and_slide(velocity * delta * 1000, Vector2.UP)
 	update_feet(delta)
 	update_lean(delta)
+	if socket_align_x != -1:
+		socket_align(delta)
 
 
 # helper functions --------------------------------------
@@ -68,14 +73,14 @@ func get_input():
 		$CoyoteTimer.start()
 		velocity.y = 0
 	
-	#vertical inputs
+	#vertical input
 	if Input.is_action_pressed("ui_up") and not $CoyoteTimer.is_stopped() and alive:
 		velocity.y = clamp(velocity.y - jump, -velocity_max.y, velocity_max.y)
 		$CoyoteTimer.stop()
-	if Input.is_action_just_pressed("ui_down"):
-		self.alive = false
-	if Input.is_action_just_released("ui_down"):
-		self.alive = true
+	
+	#plug input
+	if Input.is_action_just_pressed("plug"):
+		self.alive = !alive
 	
 	#apply gravity
 	velocity.y = clamp(velocity.y +gravity, -velocity_max.y, velocity_max.y)
@@ -117,19 +122,32 @@ func update_lean(delta):
 	$BatteryPivot.rotation_degrees = lerp($BatteryPivot.rotation_degrees, target_rotation_degrees, clamp(abs($BatteryPivot.rotation_degrees - target_rotation_degrees) / max_lean_lerp_val * delta * 1000, 0, 1))
 
 
+func socket_align(delta):
+	if abs(global_position.x - socket_align_x) > 0.1:
+		global_position.x = lerp(global_position.x, socket_align_x, 0.2)
+	else:
+		socket_align_x = -1
+
+
 # set/get functions --------------------------------------
 func set_alive(new_val):
 	alive = new_val
 	
 	var foot_offset = Vector2(0, -4)
 	var tween_duration = 0.5
+	var tween_return_delay = 0.5
+	$TransitionTween.stop_all()
 	
 	if alive:
-		$TransitionTween.interpolate_property($BatteryPivot, "position:y", $BatteryPivot.position.y, 0, tween_duration, Tween.TRANS_ELASTIC, Tween.EASE_IN_OUT, 0.0)
-		$TransitionTween.interpolate_property($BatteryPivot/Battery/Face, "modulate", $BatteryPivot/Battery/Face.modulate, Color(1,1,1,1), tween_duration, Tween.TRANS_QUAD, Tween.EASE_OUT, 0.0)
+		$TransitionTween.interpolate_property($BatteryPivot, "position:y", $BatteryPivot.position.y, 0, tween_duration, Tween.TRANS_ELASTIC, Tween.EASE_IN_OUT, tween_return_delay)
+		$TransitionTween.interpolate_property($BatteryPivot/Battery/Face, "modulate", $BatteryPivot/Battery/Face.modulate, Color(1,1,1,1), tween_duration, Tween.TRANS_QUAD, Tween.EASE_OUT, tween_return_delay)
+		for power_indicator in $BatteryPivot/PowerIndicators.get_children():
+			power_indicator.active = false
 	else:
 		$TransitionTween.interpolate_property($BatteryPivot, "position:y", $BatteryPivot.position.y, 24, tween_duration, Tween.TRANS_ELASTIC, Tween.EASE_IN_OUT, 0.0)
 		$TransitionTween.interpolate_property($BatteryPivot/Battery/Face, "modulate", $BatteryPivot/Battery/Face.modulate, Color(1,1,1,0), tween_duration, Tween.TRANS_QUAD, Tween.EASE_OUT, 0.0)
+		for power_indicator in $BatteryPivot/PowerIndicators.get_children():
+			power_indicator.active = true
 	
 	$TransitionTween.start()
 

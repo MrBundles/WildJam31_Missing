@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Entities/Objects/Socket/Socket.gd" type="Script" id=1]
+[ext_resource path="res://Entities/Objects/Socket/SocketOff.png" type="Texture" id=2]
+[ext_resource path="res://Entities/Objects/Socket/BatteryIcon.png" type="Texture" id=3]
+[ext_resource path="res://Entities/Objects/Socket/Tab.png" type="Texture" id=4]
+[ext_resource path="res://Entities/Objects/Socket/SocketOn.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+
+uniform float socket_pos = 0.0;
+
+void fragment(){
+	vec2 uv_scaled = UV * vec2(textureSize(TEXTURE, 0));
+	COLOR = texture(TEXTURE, UV);
+	
+	if(uv_scaled.y < socket_pos){
+		COLOR.a = texture(TEXTURE, UV).a;
+	}
+	else{
+		COLOR.a = 0.0;
+		}
+}"
+
+[sub_resource type="ShaderMaterial" id=3]
+resource_local_to_scene = true
+shader = SubResource( 2 )
+shader_param/socket_pos = Vector2( 0, 80 )
+
+[node name="Socket" type="Area2D"]
+script = ExtResource( 1 )
+socket_off_texture = ExtResource( 2 )
+socket_on_texture = ExtResource( 5 )
+max_player_align_distance = 350
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="SocketSprite" type="Sprite" parent="."]
+material = SubResource( 3 )
+position = Vector2( 0, 80 )
+z_index = 1
+texture = ExtResource( 2 )
+
+[node name="TabSprite" type="Sprite" parent="."]
+position = Vector2( 0, -136 )
+scale = Vector2( 1, 1e-05 )
+z_index = -1
+texture = ExtResource( 4 )
+
+[node name="BatteryIconSprite" type="Sprite" parent="."]
+position = Vector2( 0, -80 )
+scale = Vector2( 1.02467, 0.986072 )
+z_index = -2
+texture = ExtResource( 3 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="TabTween" type="Tween" parent="."]
+[connection signal="body_entered" from="." to="." method="_on_Socket_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Socket_body_exited"]
+[connection signal="tween_all_completed" from="TabTween" to="." method="_on_TabTween_tween_all_completed"]
