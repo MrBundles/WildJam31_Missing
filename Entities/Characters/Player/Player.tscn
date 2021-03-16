@@ -1,12 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Entities/Characters/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Entities/Characters/Player/Battery.png" type="Texture" id=2]
 [ext_resource path="res://Entities/Characters/Player/Foot.png" type="Texture" id=3]
 [ext_resource path="res://Entities/Characters/Player/Face.png" type="Texture" id=4]
 [ext_resource path="res://Entities/Characters/Player/PowerIndicator.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Entities/Characters/Player/SadFace.png" type="Texture" id=6]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 63 )
 
 [node name="Player" type="KinematicBody2D" groups=[
@@ -23,10 +24,12 @@ foot_speed_mult = 0.075
 max_feet_lerp_val = 750.0
 leg_color = Color( 0.156863, 0.0901961, 0.0431373, 1 )
 max_lean_lerp_val = 1000.0
+happy_face = ExtResource( 4 )
+sad_face = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -15 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 __meta__ = {
 "_edit_ik_": true
 }

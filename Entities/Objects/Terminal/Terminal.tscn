@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Entities/Objects/Terminal/TerminalScreen.png" type="Texture" id=1]
+[ext_resource path="res://Entities/Objects/Terminal/TerminalFace.png" type="Texture" id=2]
+[ext_resource path="res://Entities/Objects/Terminal/Terminal.gd" type="Script" id=3]
+
+[node name="Terminal" type="NinePatchRect"]
+margin_left = -32.0
+margin_top = -32.0
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 48, 48 )
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+on = true
+on_color = Color( 0.356863, 0.682353, 0.482353, 1 )
+off_color = Color( 0.2, 0.207843, 0.2, 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 6
+custom_constants/margin_top = 6
+custom_constants/margin_left = 6
+custom_constants/margin_bottom = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+margin_left = 6.0
+margin_top = 6.0
+margin_right = 58.0
+margin_bottom = 58.0
+color = Color( 0.2, 0.207843, 0.2, 1 )
+
+[node name="FaceRect" type="TextureRect" parent="MarginContainer"]
+margin_left = 6.0
+margin_top = 6.0
+margin_right = 58.0
+margin_bottom = 58.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OffRect" type="ColorRect" parent="MarginContainer"]
+visible = false
+margin_left = 6.0
+margin_top = 6.0
+margin_right = 58.0
+margin_bottom = 58.0
+color = Color( 0.141176, 0.141176, 0.137255, 1 )

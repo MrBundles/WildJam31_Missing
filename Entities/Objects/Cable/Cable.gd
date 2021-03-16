@@ -5,8 +5,8 @@ extends Path2D
 
 # variables --------------------------------------
 export var cable_id = 0
+var power_progress = 0.0
 var cable_charged = false
-export(float, 0.0, 1.0, 0.01) var power_progress = 0.0
 export var power_progress_mult = 1000
 export var on_color = Color(1,1,1,1)
 export var off_color = Color(1,1,1,1)
@@ -45,11 +45,13 @@ func set_active(new_val):
 	
 	var tween_duration = curve.get_baked_length() / power_progress_mult
 	$Tween.stop_all()
+	$Tween.remove_all()
 	
 	if active:
-		$Tween.interpolate_property(self, "power_progress", power_progress, 1.0, tween_duration, Tween.TRANS_QUART, Tween.EASE_OUT, 0.0)
+		$Tween.interpolate_property(self, "power_progress", power_progress, 1.0, tween_duration, Tween.TRANS_QUAD, Tween.EASE_IN, 0.0)
 	else:
-		$Tween.interpolate_property(self, "power_progress", power_progress, 0.0, tween_duration, Tween.TRANS_QUART, Tween.EASE_OUT, 0.0)
+		GSM.emit_signal("cable_charged", cable_id, false)
+		$Tween.interpolate_property(self, "power_progress", power_progress, 0.0, tween_duration, Tween.TRANS_QUAD, Tween.EASE_OUT, 0.0)
 	
 	$Tween.start()
 	
@@ -62,8 +64,4 @@ func _on_socket_plugged(socket_id, plugged_in):
 
 func _on_Tween_tween_all_completed():
 	if power_progress == 1.0:
-		cable_charged = true
-	else:
-		cable_charged = false
-		
-	GSM.emit_signal("cable_charged", cable_id, cable_charged)
+		GSM.emit_signal("cable_charged", cable_id, true)

@@ -8,69 +8,69 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="18.256256mm"
-   height="60.589588mm"
-   viewBox="0 0 18.256256 60.589588"
-   version="1.1"
-   id="svg8"
+   sodipodi:docname="WildJam31_Missing.svg"
    inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
-   sodipodi:docname="WildJam31_Missing.svg">
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 18.256256 60.589588"
+   height="60.589588mm"
+   width="18.256256mm">
   <defs
      id="defs2">
     <pattern
-       patternTransform="matrix(10,0,0,10,42.333341,-33.866685)"
-       id="pattern1878"
+       inkscape:collect="always"
        xlink:href="#Strips1_1.5"
-       inkscape:collect="always" />
+       id="pattern1878"
+       patternTransform="matrix(10,0,0,10,42.333341,-33.866685)" />
     <pattern
-       inkscape:isstock="true"
-       inkscape:stockid="Stripes 1:1.5"
-       id="Strips1_1.5"
-       patternTransform="translate(0,0) scale(10,10)"
-       height="1"
-       width="2.5"
+       inkscape:collect="always"
        patternUnits="userSpaceOnUse"
-       inkscape:collect="always">
+       width="2.5"
+       height="1"
+       patternTransform="translate(0,0) scale(10,10)"
+       id="Strips1_1.5"
+       inkscape:stockid="Stripes 1:1.5"
+       inkscape:isstock="true">
       <rect
-         id="rect1906"
-         height="2"
-         width="1"
-         y="-0.5"
+         style="fill:black;stroke:none"
          x="0"
-         style="fill:black;stroke:none" />
+         y="-0.5"
+         width="1"
+         height="2"
+         id="rect1906" />
     </pattern>
   </defs>
   <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="1.0350302"
-     inkscape:cx="248.97344"
-     inkscape:cy="-42.101414"
-     inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
-     inkscape:document-rotation="0"
-     showgrid="true"
-     inkscape:window-width="1920"
-     inkscape:window-height="1001"
-     inkscape:window-x="2391"
-     inkscape:window-y="215"
-     inkscape:window-maximized="1"
-     showborder="false"
-     inkscape:snap-global="true"
+     inkscape:bbox-nodes="true"
      inkscape:snap-bbox="true"
-     inkscape:bbox-nodes="true">
+     inkscape:snap-global="true"
+     showborder="false"
+     inkscape:window-maximized="1"
+     inkscape:window-y="215"
+     inkscape:window-x="2391"
+     inkscape:window-height="1001"
+     inkscape:window-width="1920"
+     showgrid="true"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="47.38033"
+     inkscape:cx="229.97659"
+     inkscape:zoom="1.4637537"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base">
     <inkscape:grid
-       originy="-143.27188"
-       originx="9.1281281"
-       type="xygrid"
-       id="grid833"
-       spacingx="8.4666667"
+       empspacing="2"
        spacingy="8.4666667"
-       empspacing="2" />
+       spacingx="8.4666667"
+       id="grid833"
+       type="xygrid"
+       originx="9.1281281"
+       originy="-143.27188" />
   </sodipodi:namedview>
   <metadata
      id="metadata5">
@@ -85,183 +85,526 @@
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(9.1281282,-143.27187)"
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
+     style="display:inline"
      id="layer1"
-     style="display:inline">
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1"
+     transform="translate(9.1281282,-143.27187)">
     <rect
-       inkscape:export-ydpi="48"
-       inkscape:export-xdpi="48"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOn.png"
-       style="fill:#f5cb5c;fill-opacity:1;stroke:none;stroke-width:5.29168;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect2122"
-       width="8.4666672"
-       height="67.73333"
-       x="-59.266666"
-       y="228.60001" />
-    <rect
-       inkscape:export-ydpi="48"
-       inkscape:export-xdpi="48"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOn.png"
-       y="228.60001"
-       x="-25.4"
-       height="67.73333"
-       width="8.4666672"
-       id="rect2128"
-       style="fill:#f5cb5c;fill-opacity:1;stroke:none;stroke-width:5.29168;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <rect
-       inkscape:export-ydpi="48"
-       inkscape:export-xdpi="48"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOff.png"
-       y="135.46667"
-       x="-59.266666"
-       height="67.73333"
-       width="8.4666672"
-       id="rect2951"
-       style="fill:#f5cb5c;fill-opacity:1;stroke:none;stroke-width:5.29168;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <rect
-       inkscape:export-ydpi="48"
-       inkscape:export-xdpi="48"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOff.png"
-       style="fill:#f5cb5c;fill-opacity:1;stroke:none;stroke-width:5.29168;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect2116"
-       width="8.4666672"
-       height="67.73333"
-       x="-25.4"
-       y="135.46667" />
-    <path
-       inkscape:export-ydpi="48"
-       inkscape:export-xdpi="48"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOn.png"
-       id="path2124"
-       style="fill:#333533;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
-       d="m -59.266667,228.6 v 8.16591 l 8.16591,-8.16591 z m 8.46667,11.67267 -8.46667,8.46667 v 11.97394 l 8.46667,-8.46666 z m 0,23.94737 -8.46667,8.46667 v 11.97395 l 8.46667,-8.46667 z m 0,23.94738 -8.16591,8.16591 h 8.16591 z" />
-    <path
-       inkscape:export-ydpi="48"
-       inkscape:export-xdpi="48"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOn.png"
-       d="m -25.400001,228.6 v 8.16591 l 8.16591,-8.16591 z m 8.46667,11.67267 -8.46667,8.46667 v 11.97394 l 8.46667,-8.46666 z m 0,23.94737 -8.46667,8.46667 v 11.97395 l 8.46667,-8.46667 z m 0,23.94738 -8.16591,8.16591 h 8.16591 z"
-       style="fill:#333533;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
-       id="path2130" />
-    <path
-       inkscape:export-ydpi="48"
-       inkscape:export-xdpi="48"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOff.png"
-       d="m -59.266667,135.46667 v 8.16591 l 8.16591,-8.16591 z m 8.46667,11.67267 -8.46667,8.46667 v 11.97394 l 8.46667,-8.46666 z m 0,23.94737 -8.46667,8.46667 v 11.97395 l 8.46667,-8.46667 z m 0,23.94738 -8.16591,8.16591 h 8.16591 z"
-       style="fill:#333533;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect2061" />
-    <path
-       inkscape:export-ydpi="48"
-       inkscape:export-xdpi="48"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOff.png"
-       id="path2118"
-       style="fill:#333533;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
-       d="m -25.400001,135.46667 v 8.16591 l 8.16591,-8.16591 z m 8.46667,11.67267 -8.46667,8.46667 v 11.97394 l 8.46667,-8.46666 z m 0,23.94737 -8.46667,8.46667 v 11.97395 l 8.46667,-8.46667 z m 0,23.94738 -8.16591,8.16591 h 8.16591 z" />
-    <rect
-       inkscape:export-ydpi="48"
-       inkscape:export-xdpi="48"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOff.png"
-       style="fill:#333533;fill-opacity:1;stroke-width:0.739535;stroke-linecap:round"
-       id="rect1971"
+       style="display:inline;fill:#ff00ff;stroke-width:9.98902;stroke-linecap:round;stroke-miterlimit:4.4"
+       id="rect938"
        width="42.333332"
-       height="4.233335"
+       height="67.73333"
+       x="-25.4"
+       y="135.46666"
+       ry="2.6152116e-05"
+       transform="scale(-1,1)" />
+    <rect
+       transform="scale(-1,1)"
+       ry="1.9614088e-05"
+       y="135.46666"
+       x="-194.73334"
+       height="50.799999"
+       width="59.266674"
+       id="rect930"
+       style="display:inline;fill:#ff00ff;stroke-width:10.2357;stroke-linecap:round;stroke-miterlimit:4.4" />
+    <path
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Terminal\TerminalScreen.png"
+       transform="matrix(0.26458333,0,0,0.26458333,-9.1281282,143.27187)"
+       d="m 578.5,2.5 v 96 h 96 v -96 z m 12,12 h 72 v 72 h -72 z"
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke-width:17.9082;stroke-linecap:round;stroke-miterlimit:4.4"
+       id="rect925" />
+    <rect
+       y="228.60001"
        x="-59.266666"
-       y="131.23334" />
+       height="67.73333"
+       width="8.4666672"
+       id="rect2122"
+       style="fill:#f5cb5c;fill-opacity:1;stroke:none;stroke-width:5.29168;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOn.png"
+       inkscape:export-xdpi="48"
+       inkscape:export-ydpi="48" />
     <rect
-       y="-67.73333"
-       x="-220.13333"
-       height="127"
-       width="127"
+       style="fill:#f5cb5c;fill-opacity:1;stroke:none;stroke-width:5.29168;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect2128"
+       width="8.4666672"
+       height="67.73333"
+       x="-25.4"
+       y="228.60001"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOn.png"
+       inkscape:export-xdpi="48"
+       inkscape:export-ydpi="48" />
+    <rect
+       style="fill:#f5cb5c;fill-opacity:1;stroke:none;stroke-width:5.29168;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect2951"
+       width="8.4666672"
+       height="67.73333"
+       x="-59.266666"
+       y="135.46667"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOff.png"
+       inkscape:export-xdpi="48"
+       inkscape:export-ydpi="48" />
+    <rect
+       y="135.46667"
+       x="-25.4"
+       height="67.73333"
+       width="8.4666672"
+       id="rect2116"
+       style="fill:#f5cb5c;fill-opacity:1;stroke:none;stroke-width:5.29168;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOff.png"
+       inkscape:export-xdpi="48"
+       inkscape:export-ydpi="48" />
+    <path
+       d="m -59.266667,228.6 v 8.16591 l 8.16591,-8.16591 z m 8.46667,11.67267 -8.46667,8.46667 v 11.97394 l 8.46667,-8.46666 z m 0,23.94737 -8.46667,8.46667 v 11.97395 l 8.46667,-8.46667 z m 0,23.94738 -8.16591,8.16591 h 8.16591 z"
+       style="fill:#333533;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
+       id="path2124"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOn.png"
+       inkscape:export-xdpi="48"
+       inkscape:export-ydpi="48" />
+    <path
+       id="path2130"
+       style="fill:#333533;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -25.400001,228.6 v 8.16591 l 8.16591,-8.16591 z m 8.46667,11.67267 -8.46667,8.46667 v 11.97394 l 8.46667,-8.46666 z m 0,23.94737 -8.46667,8.46667 v 11.97395 l 8.46667,-8.46667 z m 0,23.94738 -8.16591,8.16591 h 8.16591 z"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOn.png"
+       inkscape:export-xdpi="48"
+       inkscape:export-ydpi="48" />
+    <path
+       id="rect2061"
+       style="fill:#333533;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -59.266667,135.46667 v 8.16591 l 8.16591,-8.16591 z m 8.46667,11.67267 -8.46667,8.46667 v 11.97394 l 8.46667,-8.46666 z m 0,23.94737 -8.46667,8.46667 v 11.97395 l 8.46667,-8.46667 z m 0,23.94738 -8.16591,8.16591 h 8.16591 z"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOff.png"
+       inkscape:export-xdpi="48"
+       inkscape:export-ydpi="48" />
+    <path
+       d="m -25.400001,135.46667 v 8.16591 l 8.16591,-8.16591 z m 8.46667,11.67267 -8.46667,8.46667 v 11.97394 l 8.46667,-8.46666 z m 0,23.94737 -8.46667,8.46667 v 11.97395 l 8.46667,-8.46667 z m 0,23.94738 -8.16591,8.16591 h 8.16591 z"
+       style="fill:#333533;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
+       id="path2118"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOff.png"
+       inkscape:export-xdpi="48"
+       inkscape:export-ydpi="48" />
+    <rect
+       y="131.23334"
+       x="-59.266666"
+       height="4.233335"
+       width="42.333332"
+       id="rect1971"
+       style="fill:#333533;fill-opacity:1;stroke-width:0.739535;stroke-linecap:round"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOff.png"
+       inkscape:export-xdpi="48"
+       inkscape:export-ydpi="48" />
+    <rect
+       style="fill:#ffd42a;fill-opacity:1;stroke-width:2.64583;stroke-linecap:round"
        id="rect1854"
-       style="fill:#ffd42a;fill-opacity:1;stroke-width:2.64583;stroke-linecap:round" />
+       width="127"
+       height="127"
+       x="-220.13333"
+       y="-67.73333" />
     <rect
-       style="fill:#333533;fill-opacity:1;stroke-width:1.30584;stroke-linecap:round;stroke-miterlimit:4.4"
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Characters\Player\Battery.png"
+       ry="4.0862687e-06"
+       y="160.86667"
+       x="33.866665"
+       height="42.333332"
+       width="16.933334"
        id="rect835"
+       style="fill:#333533;fill-opacity:1;stroke-width:1.30584;stroke-linecap:round;stroke-miterlimit:4.4" />
+    <rect
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Characters\Player\Battery.png"
+       style="fill:#deaa87;stroke-width:0.71524;stroke-linecap:round;stroke-miterlimit:4.4"
+       id="rect837"
+       width="16.933332"
+       height="12.699999"
+       x="33.866669"
+       y="148.16667"
+       ry="1.2258806e-06" />
+    <rect
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Characters\Player\Battery.png"
+       ry="2.4517612e-06"
+       y="143.93333"
+       x="38.100002"
+       height="4.2333331"
+       width="8.4666653"
+       id="rect839"
+       style="fill:#abbfb5;fill-opacity:1;stroke-width:1.0115;stroke-linecap:round;stroke-miterlimit:4.4" />
+    <path
+       d="m 82.795512,228.87713 a 8.4666671,8.46667 0 0 1 -8.466666,-8.46667 h 16.933333 a 8.4666671,8.46667 0 0 1 -8.466667,8.46667 z"
+       style="fill:#808080;stroke-width:8.05871;stroke-linecap:round;stroke-miterlimit:4.4"
+       id="ellipse864" />
+    <path
+       id="path874"
+       style="fill:#808080;stroke-width:4.02934;stroke-linecap:round;stroke-miterlimit:4.4"
+       d="m 89.084217,206.18991 a 4.2333322,4.2333335 89.964776 0 0 -4.230729,4.23593 4.2333322,4.2333335 89.964776 0 0 4.235935,4.23074 4.2333322,4.2333335 89.964776 0 0 1.245801,-0.18836 2.1166663,2.1166666 89.964776 0 1 -1.247103,-1.92831 2.1166663,2.1166666 89.964776 0 1 2.115365,-2.11797 2.1166663,2.1166666 89.964776 0 1 1.929848,1.24473 4.2333322,4.2333335 89.964776 0 0 0.186818,-1.24603 4.2333322,4.2333335 89.964776 0 0 -4.235935,-4.23073 z" />
+    <rect
+       transform="scale(-1,1)"
+       ry="3.2690173e-06"
+       y="169.33333"
+       x="-76.199997"
+       height="8.4666729"
+       width="8.4666653"
+       id="rect876"
+       style="fill:#808080;stroke-width:1.5794;stroke-linecap:round;stroke-miterlimit:4.4" />
+    <rect
+       style="display:inline;fill:#ff00ff;stroke-width:7.06329;stroke-linecap:round;stroke-miterlimit:4.4"
+       id="rect882"
+       width="33.866669"
+       height="42.333321"
+       x="-110.06667"
+       y="160.86667"
+       ry="1.634507e-05"
+       transform="scale(-1,1)" />
+    <g
+       transform="translate(2.6000001e-6,-5.0270903)"
+       style="display:inline"
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Characters\Player\Face.png"
+       id="g922">
+      <rect
+         style="fill:#ff0000;fill-opacity:0;stroke-width:3.1588;stroke-linecap:round;stroke-miterlimit:4.4"
+         id="rect884"
+         width="16.933334"
+         height="16.93334"
+         x="-101.6"
+         y="169.33333"
+         ry="6.5380318e-06"
+         transform="scale(-1,1)" />
+      <g
+         id="g914"
+         transform="translate(50.799999,-17.197919)">
+        <path
+           inkscape:export-ydpi="48"
+           inkscape:export-xdpi="48"
+           inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Characters\Player\Battery.png"
+           id="path888"
+           style="fill:#ffffff;fill-opacity:1;stroke-width:4.02935;stroke-linecap:round;stroke-miterlimit:4.4"
+           d="m 42.333332,200.025 a 4.233333,4.2333371 0 0 1 -4.233333,-4.23333 h 8.466666 a 4.233333,4.2333371 0 0 1 -4.233333,4.23333 z" />
+        <g
+           inkscape:export-ydpi="48"
+           inkscape:export-xdpi="48"
+           inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Characters\Player\Battery.png"
+           transform="translate(-1.0583344,-0.52916667)"
+           id="g908">
+          <circle
+             style="fill:#ffffff;fill-opacity:1;stroke-width:1.0115;stroke-linecap:round;stroke-miterlimit:4.4"
+             id="circle896"
+             cx="46.566666"
+             cy="192.61667"
+             r="2.116667" />
+          <circle
+             r="2.116667"
+             cy="192.61667"
+             cx="40.216667"
+             id="circle904"
+             style="fill:#ffffff;fill-opacity:1;stroke-width:1.0115;stroke-linecap:round;stroke-miterlimit:4.4" />
+        </g>
+      </g>
+    </g>
+    <rect
+       style="fill:url(#pattern1878);fill-opacity:1;stroke:none;stroke-width:2.11561;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:2.11561, 16.9249;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect2896"
+       width="127.00001"
+       height="127.00002"
+       x="-16.933334"
+       y="-101.60002"
+       ry="0" />
+    <rect
+       style="fill:#ffffff;fill-opacity:0;stroke:#ffffff;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1894"
        width="16.933334"
        height="42.333332"
-       x="33.866665"
+       x="-8.4666681"
        y="160.86667"
        ry="4.0862687e-06"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Characters\Player\Battery.png"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\BatteryIcon.png"
        inkscape:export-xdpi="48"
        inkscape:export-ydpi="48" />
     <rect
        ry="1.2258806e-06"
        y="148.16667"
-       x="33.866669"
+       x="-8.4666643"
        height="12.699999"
        width="16.933332"
-       id="rect837"
-       style="fill:#deaa87;stroke-width:0.71524;stroke-linecap:round;stroke-miterlimit:4.4"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Characters\Player\Battery.png"
+       id="rect1896"
+       style="fill:#ffffff;fill-opacity:0;stroke:#ffffff;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\BatteryIcon.png"
        inkscape:export-xdpi="48"
        inkscape:export-ydpi="48" />
     <rect
-       style="fill:#333533;fill-opacity:1;stroke-width:1.0115;stroke-linecap:round;stroke-miterlimit:4.4"
-       id="rect839"
+       style="fill:#ffffff;fill-opacity:0;stroke:#ffffff;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1898"
        width="8.4666653"
        height="4.2333331"
-       x="38.100002"
+       x="-4.2333307"
        y="143.93333"
        ry="2.4517612e-06"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Characters\Player\Battery.png"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\BatteryIcon.png"
+       inkscape:export-xdpi="48"
+       inkscape:export-ydpi="48" />
+    <rect
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\BatteryIcon.png"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.54008;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1907"
+       width="8.4666634"
+       height="2.8222213"
+       x="-4.2333307"
+       y="196.14439" />
+    <rect
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\BatteryIcon.png"
+       y="153.10556"
+       x="-4.2333269"
+       height="2.8222213"
+       width="8.4666634"
+       id="rect1909"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.54008;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\BatteryIcon.png"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.54008;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1911"
+       width="8.4666634"
+       height="2.8222213"
+       x="150.28334"
+       y="-1.4111108"
+       transform="rotate(90)" />
+    <rect
+       style="fill:#333533;fill-opacity:1;stroke-width:0.467723;stroke-linecap:round"
+       id="rect1973"
+       width="8.4666653"
+       height="8.4666595"
+       x="-84.666664"
+       y="118.53334"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\Tab.png"
        inkscape:export-xdpi="48"
        inkscape:export-ydpi="48" />
     <path
-       id="ellipse864"
-       style="fill:#808080;stroke-width:8.05871;stroke-linecap:round;stroke-miterlimit:4.4"
-       d="m 82.795512,228.87713 a 8.4666671,8.46667 0 0 1 -8.466666,-8.46667 h 16.933333 a 8.4666671,8.46667 0 0 1 -8.466667,8.46667 z" />
-    <path
-       d="m 89.084217,206.18991 a 4.2333322,4.2333335 89.964776 0 0 -4.230729,4.23593 4.2333322,4.2333335 89.964776 0 0 4.235935,4.23074 4.2333322,4.2333335 89.964776 0 0 1.245801,-0.18836 2.1166663,2.1166666 89.964776 0 1 -1.247103,-1.92831 2.1166663,2.1166666 89.964776 0 1 2.115365,-2.11797 2.1166663,2.1166666 89.964776 0 1 1.929848,1.24473 4.2333322,4.2333335 89.964776 0 0 0.186818,-1.24603 4.2333322,4.2333335 89.964776 0 0 -4.235935,-4.23073 z"
-       style="fill:#808080;stroke-width:4.02934;stroke-linecap:round;stroke-miterlimit:4.4"
-       id="path874" />
-    <rect
-       style="fill:#808080;stroke-width:1.5794;stroke-linecap:round;stroke-miterlimit:4.4"
-       id="rect876"
-       width="8.4666653"
-       height="8.4666729"
-       x="-76.199997"
-       y="169.33333"
-       ry="3.2690173e-06"
-       transform="scale(-1,1)" />
-    <rect
-       transform="scale(-1,1)"
-       ry="1.3076059e-05"
-       y="160.86667"
-       x="-110.06667"
-       height="33.866665"
-       width="33.866669"
-       id="rect882"
-       style="display:inline;fill:#ff00ff;stroke-width:6.3176;stroke-linecap:round;stroke-miterlimit:4.4" />
-    <g
-       id="g922"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Characters\Player\Face.png"
+       id="path1977"
+       style="fill:#333533;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -38.165113,119.06254 A 12.7,12.7 0 0 0 -50.8,131.66849 h 25.398966 a 12.7,12.7 0 0 0 -12.699483,-12.60595 12.7,12.7 0 0 0 -0.0646,0 z"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOff.png"
        inkscape:export-xdpi="48"
+       inkscape:export-ydpi="48" />
+    <path
+       id="circle1979"
+       style="fill:#db5461;fill-opacity:1;stroke:none;stroke-width:0.968182;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -38.100517,122.46802 a 9.294525,9.294525 0 0 0 -9.294006,9.20047 h 18.588012 a 9.294525,9.294525 0 0 0 -9.294006,-9.20047 z"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOff.png"
+       inkscape:export-xdpi="48"
+       inkscape:export-ydpi="48" />
+    <rect
        inkscape:export-ydpi="48"
-       style="display:inline">
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOn.png"
+       style="fill:#333533;fill-opacity:1;stroke-width:0.739535;stroke-linecap:round"
+       id="rect1997"
+       width="42.333332"
+       height="4.233335"
+       x="-59.266663"
+       y="224.36667" />
+    <path
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOn.png"
+       d="M -38.165113,212.19587 A 12.7,12.7 0 0 0 -50.8,224.80182 h 25.398966 a 12.7,12.7 0 0 0 -12.699483,-12.60595 12.7,12.7 0 0 0 -0.0646,0 z"
+       style="fill:#333533;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
+       id="path2011" />
+    <path
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOn.png"
+       d="m -38.100517,215.60135 a 9.294525,9.294525 0 0 0 -9.294006,9.20047 h 18.588012 a 9.294525,9.294525 0 0 0 -9.294006,-9.20047 z"
+       style="fill:#5bae7b;fill-opacity:1;stroke:none;stroke-width:0.968182;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
+       id="path2013" />
+    <rect
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Resources\Tilesets\MainTileset.png"
+       style="fill:#2176ae;fill-opacity:1;stroke:none;stroke-width:2.64584;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2015"
+       width="33.866665"
+       height="33.866665"
+       x="-59.266666"
+       y="59.266663" />
+    <rect
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Resources\Tilesets\MainTileset.png"
+       y="59.266678"
+       x="-25.399998"
+       height="33.866665"
+       width="33.866665"
+       id="rect2017"
+       style="fill:#e87461;fill-opacity:1;stroke:none;stroke-width:2.64584;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Resources\Tilesets\MainTileset.png"
+       style="fill:#db5461;fill-opacity:1;stroke:none;stroke-width:2.64584;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2019"
+       width="33.866665"
+       height="33.866665"
+       x="8.4666777"
+       y="59.266678" />
+    <rect
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Resources\Tilesets\MainTileset.png"
+       y="59.266678"
+       x="42.333332"
+       height="33.866665"
+       width="33.866665"
+       id="rect2021"
+       style="fill:#5bae7b;fill-opacity:1;stroke:none;stroke-width:2.64584;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Resources\Tilesets\MainTileset.png"
+       style="fill:#745296;fill-opacity:1;stroke:none;stroke-width:2.64584;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2023"
+       width="33.866665"
+       height="33.866665"
+       x="76.199997"
+       y="59.266678" />
+    <rect
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Resources\Tilesets\MainTileset.png"
+       y="59.266678"
+       x="110.06667"
+       height="33.866665"
+       width="33.866665"
+       id="rect2025"
+       style="fill:#f5cb5c;fill-opacity:1;stroke:none;stroke-width:2.64584;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Resources\Tilesets\MainTileset.png"
+       style="fill:#242423;fill-opacity:1;stroke:none;stroke-width:2.64584;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2027"
+       width="33.866665"
+       height="33.866665"
+       x="143.93335"
+       y="59.266678" />
+    <rect
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Resources\Tilesets\MainTileset.png"
+       y="59.266678"
+       x="177.79999"
+       height="33.866665"
+       width="33.866665"
+       id="rect2029"
+       style="fill:#333533;fill-opacity:1;stroke:none;stroke-width:2.64584;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Resources\Tilesets\MainTileset.png"
+       style="fill:#cfdbd5;fill-opacity:1;stroke:none;stroke-width:2.64584;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2031"
+       width="33.866665"
+       height="33.866665"
+       x="245.53333"
+       y="59.266647" />
+    <rect
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Resources\Tilesets\MainTileset.png"
+       y="59.266647"
+       x="279.39999"
+       height="33.866665"
+       width="33.866665"
+       id="rect2033"
+       style="fill:#e8eddf;fill-opacity:1;stroke:none;stroke-width:2.64584;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       d="M 42.333333,211.66666 A 4.233333,4.2333371 0 0 0 38.1,215.89999 h 8.466666 a 4.233333,4.2333371 0 0 0 -4.233333,-4.23333 z"
+       style="fill:#333533;fill-opacity:1;stroke-width:4.02935;stroke-linecap:round;stroke-miterlimit:4.4"
+       id="path2163"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Characters\Player\Foot.png"
+       inkscape:export-xdpi="48"
+       inkscape:export-ydpi="48" />
+    <g
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Terminal\TerminalFace.png"
+       style="fill:#5bae7b;fill-opacity:1"
+       id="g903"
+       transform="translate(135.46667,-39.158343)">
+      <path
+         inkscape:export-ydpi="48"
+         inkscape:export-xdpi="48"
+         inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Characters\Player\Battery.png"
+         id="path895"
+         style="fill:#5bae7b;fill-opacity:1;stroke-width:4.02935;stroke-linecap:round;stroke-miterlimit:4.4"
+         d="m 42.333332,200.025 a 4.233333,4.2333371 0 0 1 -4.233333,-4.23333 h 8.466666 a 4.233333,4.2333371 0 0 1 -4.233333,4.23333 z" />
+      <g
+         style="fill:#5bae7b;fill-opacity:1"
+         inkscape:export-ydpi="48"
+         inkscape:export-xdpi="48"
+         inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Characters\Player\Battery.png"
+         transform="translate(-1.0583344,-0.52916667)"
+         id="g901">
+        <circle
+           style="fill:#5bae7b;fill-opacity:1;stroke-width:1.0115;stroke-linecap:round;stroke-miterlimit:4.4"
+           id="circle897"
+           cx="46.566666"
+           cy="192.61667"
+           r="2.116667" />
+        <circle
+           r="2.116667"
+           cy="192.61667"
+           cx="40.216667"
+           id="circle899"
+           style="fill:#5bae7b;fill-opacity:1;stroke-width:1.0115;stroke-linecap:round;stroke-miterlimit:4.4" />
+      </g>
+    </g>
+    <rect
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Resources\Tilesets\MainTileset.png"
+       style="fill:#818884;fill-opacity:1;stroke:none;stroke-width:2.64584;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect913"
+       width="33.866665"
+       height="33.866665"
+       x="211.66666"
+       y="59.266647" />
+    <g
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Characters\Player\SadFace.png"
+       id="g976">
       <rect
          transform="scale(-1,1)"
          ry="6.5380318e-06"
-         y="169.33333"
+         y="181.23958"
          x="-101.6"
          height="16.93334"
          width="16.933334"
-         id="rect884"
+         id="rect940"
          style="fill:#ff0000;fill-opacity:0;stroke-width:3.1588;stroke-linecap:round;stroke-miterlimit:4.4" />
       <g
-         transform="translate(50.799999,-17.197919)"
-         id="g914">
+         id="g968">
         <path
-           d="m 42.333332,200.025 a 4.233333,4.2333371 0 0 1 -4.233333,-4.23333 h 8.466666 a 4.233333,4.2333371 0 0 1 -4.233333,4.23333 z"
+           d="m 93.133334,190.49999 a 4.233333,4.2333371 0 0 0 -4.233333,4.23333 h 8.466666 a 4.233333,4.2333371 0 0 0 -4.233333,-4.23333 z"
            style="fill:#ffffff;fill-opacity:1;stroke-width:4.02935;stroke-linecap:round;stroke-miterlimit:4.4"
-           id="path888"
+           id="path942"
            inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Characters\Player\Battery.png"
            inkscape:export-xdpi="48"
            inkscape:export-ydpi="48" />
         <g
-           id="g908"
-           transform="translate(-1.0583344,-0.52916667)"
+           id="g948"
+           transform="translate(49.741668,-5.8208427)"
            inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Characters\Player\Battery.png"
            inkscape:export-xdpi="48"
            inkscape:export-ydpi="48">
@@ -269,210 +612,16 @@
              r="2.116667"
              cy="192.61667"
              cx="46.566666"
-             id="circle896"
+             id="circle944"
              style="fill:#ffffff;fill-opacity:1;stroke-width:1.0115;stroke-linecap:round;stroke-miterlimit:4.4" />
           <circle
              style="fill:#ffffff;fill-opacity:1;stroke-width:1.0115;stroke-linecap:round;stroke-miterlimit:4.4"
-             id="circle904"
+             id="circle946"
              cx="40.216667"
              cy="192.61667"
              r="2.116667" />
         </g>
       </g>
     </g>
-    <rect
-       ry="0"
-       y="-101.60002"
-       x="-16.933334"
-       height="127.00002"
-       width="127.00001"
-       id="rect2896"
-       style="fill:url(#pattern1878);fill-opacity:1;stroke:none;stroke-width:2.11561;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:2.11561, 16.9249;stroke-dashoffset:0;stroke-opacity:1" />
-    <g
-       inkscape:export-ydpi="48"
-       inkscape:export-xdpi="48"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\BatteryIcon.png"
-       id="g2151">
-      <rect
-         style="fill:#ffffff;fill-opacity:0;stroke:#333533;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
-         id="rect1894"
-         width="16.933334"
-         height="42.333332"
-         x="-8.4666681"
-         y="160.86667"
-         ry="4.0862687e-06"
-         inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Characters\Player\Battery.png"
-         inkscape:export-xdpi="48"
-         inkscape:export-ydpi="48" />
-      <rect
-         ry="1.2258806e-06"
-         y="148.16667"
-         x="-8.4666643"
-         height="12.699999"
-         width="16.933332"
-         id="rect1896"
-         style="fill:#ffffff;fill-opacity:0;stroke:#333533;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
-         inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Characters\Player\Battery.png"
-         inkscape:export-xdpi="48"
-         inkscape:export-ydpi="48" />
-      <rect
-         style="fill:#ffffff;fill-opacity:0;stroke:#333533;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
-         id="rect1898"
-         width="8.4666653"
-         height="4.2333331"
-         x="-4.2333307"
-         y="143.93333"
-         ry="2.4517612e-06"
-         inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Characters\Player\Battery.png"
-         inkscape:export-xdpi="48"
-         inkscape:export-ydpi="48" />
-      <rect
-         style="fill:#333533;fill-opacity:1;stroke:none;stroke-width:0.54008;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
-         id="rect1907"
-         width="8.4666634"
-         height="2.8222213"
-         x="-4.2333307"
-         y="196.14439" />
-      <rect
-         y="153.10556"
-         x="-4.2333269"
-         height="2.8222213"
-         width="8.4666634"
-         id="rect1909"
-         style="fill:#333533;fill-opacity:1;stroke:none;stroke-width:0.54008;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1" />
-      <rect
-         style="fill:#333533;fill-opacity:1;stroke:none;stroke-width:0.54008;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
-         id="rect1911"
-         width="8.4666634"
-         height="2.8222213"
-         x="150.28334"
-         y="-1.4111108"
-         transform="rotate(90)" />
-    </g>
-    <rect
-       inkscape:export-ydpi="48"
-       inkscape:export-xdpi="48"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\Tab.png"
-       y="118.53334"
-       x="-84.666664"
-       height="8.4666595"
-       width="8.4666653"
-       id="rect1973"
-       style="fill:#333533;fill-opacity:1;stroke-width:0.467723;stroke-linecap:round" />
-    <path
-       inkscape:export-ydpi="48"
-       inkscape:export-xdpi="48"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOff.png"
-       d="M -38.165113,119.06254 A 12.7,12.7 0 0 0 -50.8,131.66849 h 25.398966 a 12.7,12.7 0 0 0 -12.699483,-12.60595 12.7,12.7 0 0 0 -0.0646,0 z"
-       style="fill:#333533;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
-       id="path1977" />
-    <path
-       inkscape:export-ydpi="48"
-       inkscape:export-xdpi="48"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOff.png"
-       d="m -38.100517,122.46802 a 9.294525,9.294525 0 0 0 -9.294006,9.20047 h 18.588012 a 9.294525,9.294525 0 0 0 -9.294006,-9.20047 z"
-       style="fill:#db5461;fill-opacity:1;stroke:none;stroke-width:0.968182;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
-       id="circle1979" />
-    <rect
-       y="224.36667"
-       x="-59.266663"
-       height="4.233335"
-       width="42.333332"
-       id="rect1997"
-       style="fill:#333533;fill-opacity:1;stroke-width:0.739535;stroke-linecap:round"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOn.png"
-       inkscape:export-xdpi="48"
-       inkscape:export-ydpi="48" />
-    <path
-       id="path2011"
-       style="fill:#333533;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
-       d="M -38.165113,212.19587 A 12.7,12.7 0 0 0 -50.8,224.80182 h 25.398966 a 12.7,12.7 0 0 0 -12.699483,-12.60595 12.7,12.7 0 0 0 -0.0646,0 z"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOn.png"
-       inkscape:export-xdpi="48"
-       inkscape:export-ydpi="48" />
-    <path
-       id="path2013"
-       style="fill:#5bae7b;fill-opacity:1;stroke:none;stroke-width:0.968182;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
-       d="m -38.100517,215.60135 a 9.294525,9.294525 0 0 0 -9.294006,9.20047 h 18.588012 a 9.294525,9.294525 0 0 0 -9.294006,-9.20047 z"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Objects\Socket\SocketOn.png"
-       inkscape:export-xdpi="48"
-       inkscape:export-ydpi="48" />
-    <rect
-       y="67.73333"
-       x="33.866665"
-       height="16.933332"
-       width="16.933332"
-       id="rect2015"
-       style="fill:#2176ae;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1" />
-    <rect
-       style="fill:#e87461;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect2017"
-       width="16.933332"
-       height="16.933332"
-       x="50.799999"
-       y="67.733337" />
-    <rect
-       y="67.733337"
-       x="67.733337"
-       height="16.933332"
-       width="16.933332"
-       id="rect2019"
-       style="fill:#db5461;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1" />
-    <rect
-       style="fill:#5bae7b;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect2021"
-       width="16.933332"
-       height="16.933332"
-       x="84.666664"
-       y="67.733337" />
-    <rect
-       y="67.733337"
-       x="101.6"
-       height="16.933332"
-       width="16.933332"
-       id="rect2023"
-       style="fill:#745296;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1" />
-    <rect
-       style="fill:#f5cb5c;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect2025"
-       width="16.933332"
-       height="16.933332"
-       x="118.53333"
-       y="67.733337" />
-    <rect
-       y="67.733337"
-       x="135.46667"
-       height="16.933332"
-       width="16.933332"
-       id="rect2027"
-       style="fill:#242423;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1" />
-    <rect
-       style="fill:#333533;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect2029"
-       width="16.933332"
-       height="16.933332"
-       x="152.39999"
-       y="67.733337" />
-    <rect
-       y="67.733337"
-       x="169.33333"
-       height="16.933332"
-       width="16.933332"
-       id="rect2031"
-       style="fill:#cfdbd5;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1" />
-    <rect
-       style="fill:#e8eddf;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:round;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect2033"
-       width="16.933332"
-       height="16.933332"
-       x="186.26666"
-       y="67.733337" />
-    <path
-       inkscape:export-ydpi="48"
-       inkscape:export-xdpi="48"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam31_Missing\Entities\Characters\Player\Foot.png"
-       id="path2163"
-       style="fill:#333533;fill-opacity:1;stroke-width:4.02935;stroke-linecap:round;stroke-miterlimit:4.4"
-       d="M 42.333333,211.66666 A 4.233333,4.2333371 0 0 0 38.1,215.89999 h 8.466666 a 4.233333,4.2333371 0 0 0 -4.233333,-4.23333 z" />
   </g>
 </svg>

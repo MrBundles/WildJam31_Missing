@@ -7,7 +7,7 @@ extends HSlider
 export var id = 0
 export var delay_mult = 0.1
 var active = true setget set_active
-var power_on = true
+var power_on = true setget set_power_on
 
 # main functions --------------------------------------
 func _ready():
@@ -27,12 +27,24 @@ func _process(delta):
 func set_active(new_val):
 	active = new_val
 	$Tween.stop_all()
+	$Tween.remove_all()
 	
 	if active and power_on:
-		$Tween.interpolate_property(self, "value", value, 100, 1.0, Tween.TRANS_ELASTIC, Tween.EASE_IN_OUT, id * delay_mult)
+		$Tween.interpolate_property(self, "value", value, 100, 0.5, Tween.TRANS_QUAD, Tween.EASE_OUT, id * delay_mult)
 	else:
-		$Tween.interpolate_property(self, "value", value, 0, 1.0, Tween.TRANS_ELASTIC, Tween.EASE_IN_OUT, 5 * delay_mult - id * delay_mult)
+		$Tween.interpolate_property(self, "value", value, 0, 0.5, Tween.TRANS_QUAD, Tween.EASE_OUT, 5 * delay_mult - id * delay_mult)
 	
 	$Tween.start()
+
+
+func set_power_on(new_val):
+	power_on = new_val
+	
+	if not power_on:
+		$Tween.stop_all()
+		$Tween.remove_all()
+		$Tween.interpolate_property(self, "value", value, 0, 0.5, Tween.TRANS_QUAD, Tween.EASE_OUT, 0.0)
+		$Tween.start()
+
 
 # signal functions --------------------------------------

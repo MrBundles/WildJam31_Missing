@@ -3,6 +3,7 @@ extends Node
 # signals --------------------------------------
 signal socket_plugged
 signal cable_charged
+signal terminal_on
 
 # variables --------------------------------------
 

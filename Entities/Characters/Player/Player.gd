@@ -30,11 +30,16 @@ export var max_lean_lerp_val = 1.0
 
 var socket_align_x = -1.0
 var plugged_in = false
+export var remaining_power = 5 setget set_remaining_power
+
+export(Texture) var happy_face
+export(Texture) var sad_face
 
 
 # main functions --------------------------------------
 func _ready():
 	# connect signals
+	GSM.connect("terminal_on", self, "_on_terminal_on")
 	
 	self.alive = true
 
@@ -137,6 +142,7 @@ func set_alive(new_val):
 	var tween_duration = 0.5
 	var tween_return_delay = 0.5
 	$TransitionTween.stop_all()
+	$TransitionTween.remove_all()
 	
 	if alive:
 		$TransitionTween.interpolate_property($BatteryPivot, "position:y", $BatteryPivot.position.y, 0, tween_duration, Tween.TRANS_ELASTIC, Tween.EASE_IN_OUT, tween_return_delay)
@@ -151,4 +157,20 @@ func set_alive(new_val):
 	
 	$TransitionTween.start()
 
+
+func set_remaining_power(new_val):
+	remaining_power = clamp(new_val, 0, 5)
+	
+	if remaining_power > 0:
+		$BatteryPivot/Battery/Face.texture = happy_face
+	else:
+		$BatteryPivot/Battery/Face.texture = sad_face
+	
+	for i in range(5 - remaining_power):
+		$BatteryPivot/PowerIndicators.get_child(i).power_on = false
+
+
 # signal functions --------------------------------------
+func _on_terminal_on(terminal_id, terminal_on):
+	if terminal_on:
+		self.remaining_power -= 1
