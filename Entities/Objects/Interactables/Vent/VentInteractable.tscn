@@ -1,0 +1,66 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Entities/Objects/Interactables/Vent/Vent.png" type="Texture" id=1]
+[ext_resource path="res://Entities/Objects/Interactables/Vent/VentBackground.png" type="Texture" id=2]
+[ext_resource path="res://Entities/Objects/Interactables/Vent/VentInteractable.gd" type="Script" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Shaders/WindShader.shader" type="Shader" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[sub_resource type="Gradient" id=3]
+resource_local_to_scene = true
+
+[sub_resource type="GradientTexture" id=4]
+resource_local_to_scene = true
+gradient = SubResource( 3 )
+
+[sub_resource type="OpenSimplexNoise" id=5]
+
+[sub_resource type="NoiseTexture" id=6]
+resource_local_to_scene = true
+noise = SubResource( 5 )
+
+[sub_resource type="ShaderMaterial" id=7]
+resource_local_to_scene = true
+shader = ExtResource( 5 )
+shader_param/brighter_color = Color( 0.909804, 0.929412, 0.87451, 1 )
+shader_param/middle_color = Color( 0.505882, 0.533333, 0.517647, 1 )
+shader_param/darker_color = Color( 0.2, 0.207843, 0.2, 1 )
+shader_param/spread = 0.8
+shader_param/noise_tex = SubResource( 6 )
+shader_param/gradient_tex = SubResource( 4 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 32, 96 )
+
+[node name="VentInteractable" type="RigidBody2D"]
+mode = 1
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="BackgroundSprite" type="Sprite" parent="."]
+modulate = Color( 0.356863, 0.682353, 0.482353, 1 )
+texture = ExtResource( 2 )
+
+[node name="VentSprite" type="Sprite" parent="."]
+modulate = Color( 0.2, 0.207843, 0.2, 1 )
+texture = ExtResource( 1 )
+
+[node name="WindSprite" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.0705882 )
+material = SubResource( 7 )
+position = Vector2( 0, -144 )
+scale = Vector2( 1, 3.5 )
+texture = ExtResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="."]
+space_override = 3
+gravity_vec = Vector2( 0, -1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, -128 )
+shape = SubResource( 8 )

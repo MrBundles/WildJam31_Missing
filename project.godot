@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "RigidBody2D",
+"class": "Interactable",
+"language": "GDScript",
+"path": "res://Entities/Objects/Interactables/Interactable.gd"
+} ]
 _global_script_class_icons={
-
+"Interactable": ""
 }
 
 [application]
@@ -22,6 +27,7 @@ config/icon="res://icon.png"
 [autoload]
 
 GSM="*res://Globals/GlobalSignalManager.gd"
+GEM="*res://Globals/GlobalEnumManager.gd"
 
 [display]
 

@@ -20,14 +20,17 @@ export var h_decel = 10
 export var gravity = 10
 export var jump = 10
 export var foot_speed_mult = 2.0
+export(int, 0, 200) var push = 100 # this is the players inertia
 
-var alive = false setget set_alive
+export var alive = false setget set_alive
+var sleep_at_start = true
 
 export var max_feet_lerp_val = 25.0
 export var leg_color = Color(1,1,1,1)
 export var leg_width = 10
 export var max_lean_lerp_val = 1.0
 
+var colliding_with_body = false
 var socket_align_x = -1.0
 var plugged_in = false
 export var remaining_power = 5 setget set_remaining_power
@@ -40,13 +43,15 @@ export(Texture) var sad_face
 func _ready():
 	# connect signals
 	GSM.connect("terminal_on", self, "_on_terminal_on")
+	GSM.connect("charge_battery", self, "_on_charge_battery")
 	
-	self.alive = true
+	self.alive = false
 
 
 func _physics_process(delta):
 	get_input()
-	move_and_slide(velocity * delta * 1000, Vector2.UP)
+	move_and_slide(velocity * delta * 1000, Vector2.UP, false, 4, PI/4, false)
+	update_push()
 	update_feet(delta)
 	update_lean(delta)
 	if socket_align_x != -1:
@@ -89,6 +94,17 @@ func get_input():
 	
 	#apply gravity
 	velocity.y = clamp(velocity.y +gravity, -velocity_max.y, velocity_max.y)
+
+
+func update_push():
+	var colliding_with_body_count = 0
+	for index in get_slide_count():
+		var collision = get_slide_collision(index)
+		if collision.collider.is_in_group("bodies"):
+			colliding_with_body_count += 1
+			collision.collider.apply_impulse(-collision.normal * push)
+	
+	colliding_with_body = colliding_with_body_count > 0
 
 
 func update_feet(delta):
@@ -136,6 +152,9 @@ func socket_align(delta):
 
 # set/get functions --------------------------------------
 func set_alive(new_val):
+	if sleep_at_start:
+		return
+	
 	alive = new_val
 	
 	var foot_offset = Vector2(0, -4)
@@ -166,11 +185,19 @@ func set_remaining_power(new_val):
 	else:
 		$BatteryPivot/Battery/Face.texture = sad_face
 	
-	for i in range(5 - remaining_power):
-		$BatteryPivot/PowerIndicators.get_child(i).power_on = false
+	for i in range(5):
+		$BatteryPivot/PowerIndicators.get_child(i).power_on = i >= 5 - remaining_power
 
 
 # signal functions --------------------------------------
 func _on_terminal_on(terminal_id, terminal_on):
 	if terminal_on:
 		self.remaining_power -= 1
+
+
+func _on_charge_battery():
+	self.remaining_power = 5
+
+
+
+

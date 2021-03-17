@@ -5,11 +5,10 @@
 [sub_resource type="Curve2D" id=1]
 resource_local_to_scene = true
 _data = {
-"points": PoolVector2Array(  )
+"points": PoolVector2Array( 6.7959, 111.377, -6.7959, -111.377, 1526.4, 544, 0, 160.459, 0, -160.459, 1612.8, 288, 32.2805, 24.5407, -32.2805, -24.5407, 1324.8, 96, 1.69898, 109.489, -1.69898, -109.489, 1296, -32 )
 }
 
 [node name="Cable" type="Path2D"]
-position = Vector2( -167.111, 0 )
 scale = Vector2( 1.11111, 1 )
 z_index = -1
 curve = SubResource( 1 )

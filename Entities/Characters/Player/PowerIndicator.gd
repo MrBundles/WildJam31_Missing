@@ -39,12 +39,15 @@ func set_active(new_val):
 
 func set_power_on(new_val):
 	power_on = new_val
+	$Tween.stop_all()
+	$Tween.remove_all()
 	
-	if not power_on:
-		$Tween.stop_all()
-		$Tween.remove_all()
+	if power_on:
+		$Tween.interpolate_property(self, "value", value, 100, 0.5, Tween.TRANS_QUAD, Tween.EASE_OUT, 0.0)
+	else:
 		$Tween.interpolate_property(self, "value", value, 0, 0.5, Tween.TRANS_QUAD, Tween.EASE_OUT, 0.0)
-		$Tween.start()
+	
+	$Tween.start()
 
 
 # signal functions --------------------------------------

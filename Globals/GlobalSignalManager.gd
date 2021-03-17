@@ -4,6 +4,9 @@ extends Node
 signal socket_plugged
 signal cable_charged
 signal terminal_on
+signal charge_battery
+
+signal level_complete
 
 # variables --------------------------------------
 

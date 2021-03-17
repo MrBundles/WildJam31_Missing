@@ -48,10 +48,10 @@ func set_active(new_val):
 	$Tween.remove_all()
 	
 	if active:
-		$Tween.interpolate_property(self, "power_progress", power_progress, 1.0, tween_duration, Tween.TRANS_QUAD, Tween.EASE_IN, 0.0)
+		$Tween.interpolate_property(self, "power_progress", power_progress, 1.0, tween_duration, Tween.TRANS_LINEAR, Tween.EASE_IN, 0.0)
 	else:
 		GSM.emit_signal("cable_charged", cable_id, false)
-		$Tween.interpolate_property(self, "power_progress", power_progress, 0.0, tween_duration, Tween.TRANS_QUAD, Tween.EASE_OUT, 0.0)
+		$Tween.interpolate_property(self, "power_progress", power_progress, 0.0, tween_duration, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0.0)
 	
 	$Tween.start()
 	
@@ -65,3 +65,6 @@ func _on_socket_plugged(socket_id, plugged_in):
 func _on_Tween_tween_all_completed():
 	if power_progress == 1.0:
 		GSM.emit_signal("cable_charged", cable_id, true)
+		if cable_id == GEM.RESERVED_IDS.end:
+			GSM.emit_signal("level_complete")
+			print("level_complete")
