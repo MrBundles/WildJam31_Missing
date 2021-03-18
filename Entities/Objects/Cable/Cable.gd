@@ -5,12 +5,14 @@ extends Path2D
 
 # variables --------------------------------------
 export var cable_id = 0
+var game_scene_id = 0
 var power_progress = 0.0
 var cable_charged = false
 export var power_progress_mult = 1000
 export var on_color = Color(1,1,1,1)
 export var off_color = Color(1,1,1,1)
 export var cable_width = 10
+export(GEM.SCENE_TRANSITION_TYPES) var scene_transition_type = GEM.SCENE_TRANSITION_TYPES.up
 
 export var active = false setget set_active
 
@@ -19,7 +21,9 @@ export var active = false setget set_active
 func _ready():
 	# connect signals
 	GSM.connect("socket_plugged", self, "_on_socket_plugged")
-
+	
+	game_scene_id = GVM.game_scene
+	
 
 func _process(delta):
 	update()
@@ -50,21 +54,20 @@ func set_active(new_val):
 	if active:
 		$Tween.interpolate_property(self, "power_progress", power_progress, 1.0, tween_duration, Tween.TRANS_LINEAR, Tween.EASE_IN, 0.0)
 	else:
-		GSM.emit_signal("cable_charged", cable_id, false)
+		GSM.emit_signal("cable_charged", game_scene_id, cable_id, false)
 		$Tween.interpolate_property(self, "power_progress", power_progress, 0.0, tween_duration, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0.0)
 	
 	$Tween.start()
 	
 	
 # signal functions --------------------------------------
-func _on_socket_plugged(socket_id, plugged_in):
-	if socket_id == cable_id:
+func _on_socket_plugged(new_game_scene_id, socket_id, plugged_in):
+	if game_scene_id == new_game_scene_id and socket_id == cable_id and not GVM.scene_transition_in_progress:
 		self.active = plugged_in
 
 
 func _on_Tween_tween_all_completed():
 	if power_progress == 1.0:
-		GSM.emit_signal("cable_charged", cable_id, true)
+		GSM.emit_signal("cable_charged", game_scene_id, cable_id, true)
 		if cable_id == GEM.RESERVED_IDS.end:
-			GSM.emit_signal("level_complete")
-			print("level_complete")
+			GSM.emit_signal("level_complete", scene_transition_type)

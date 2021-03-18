@@ -7,6 +7,9 @@ signal terminal_on
 signal charge_battery
 
 signal level_complete
+signal change_game_scene
+signal change_menu_scene
+signal reset_game_scene
 
 # variables --------------------------------------
 

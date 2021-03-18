@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Menus/VolumeSlider/MuteButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Fonts/VolumeSlider.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Menus/VolumeSlider/VolumeSliderIcon.png" type="Texture" id=3]
+[ext_resource path="res://Menus/VolumeSlider/VolumeSlider.gd" type="Script" id=4]
+
+[node name="VolumeSlider" type="HBoxContainer"]
+margin_right = 293.0
+margin_bottom = 58.0
+custom_constants/separation = 32
+alignment = 1
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_top = 2.0
+margin_right = 200.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 200, 0 )
+custom_fonts/font = ExtResource( 2 )
+text = "Volume"
+align = 1
+
+[node name="HSlider" type="HSlider" parent="."]
+margin_left = 232.0
+margin_right = 732.0
+margin_bottom = 58.0
+rect_min_size = Vector2( 500, 0 )
+size_flags_vertical = 3
+custom_icons/grabber_disabled = ExtResource( 3 )
+custom_icons/grabber_highlight = ExtResource( 3 )
+custom_icons/grabber = ExtResource( 3 )
+min_value = -60.0
+max_value = 0.0
+step = 5.0
+
+[node name="MuteButton" parent="." instance=ExtResource( 1 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 764.0
+margin_top = 0.0
+margin_right = 884.0
+margin_bottom = 58.0
+[connection signal="value_changed" from="HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="mute_button_pressed" from="MuteButton" to="." method="_on_MuteButton_mute_button_pressed"]

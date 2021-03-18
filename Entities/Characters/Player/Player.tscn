@@ -8,12 +8,14 @@
 [ext_resource path="res://Entities/Characters/Player/SadFace.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
+resource_local_to_scene = true
 extents = Vector2( 16, 63 )
 
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
 ]]
 z_index = 2
+collision_layer = 2
 script = ExtResource( 1 )
 velocity_max = Vector2( 25, 75 )
 h_accel = 2
@@ -151,3 +153,7 @@ position = Vector2( -40, 24 )
 position = Vector2( 40, 24 )
 
 [node name="TransitionTween" type="Tween" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+smoothing_enabled = true
+smoothing_speed = 1.0

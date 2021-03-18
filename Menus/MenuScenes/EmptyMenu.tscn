@@ -1,0 +1,94 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Menus/MenuScenes/Menu.gd" type="Script" id=1]
+[ext_resource path="res://UI/UIButton/UIButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/GearIcon.png" type="Texture" id=3]
+[ext_resource path="res://UI/BugIcon.png" type="Texture" id=4]
+[ext_resource path="res://UI/ResetIcon.png" type="Texture" id=5]
+
+[node name="EmptyMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.49829
+margin_right = 1.49829
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoveTween" type="Tween" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -84.0
+margin_bottom = 248.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer" type="Control" parent="VBoxContainer"]
+margin_right = 84.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 0, 16 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 20.0
+margin_right = 84.0
+margin_bottom = 364.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_right = 64.0
+margin_bottom = 344.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseButton" parent="VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 64.0
+margin_bottom = 112.0
+icon_texture = ExtResource( 3 )
+
+[node name="ResetButton" parent="VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 116.0
+margin_right = 64.0
+margin_bottom = 228.0
+icon_texture = ExtResource( 5 )
+menu_scene_id = 6
+additional_signals = [ "reset_game_scene" ]
+label = "Reset"
+
+[node name="BugReportButton" parent="VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 232.0
+margin_right = 64.0
+margin_bottom = 344.0
+icon_texture = ExtResource( 4 )
+menu_scene_id = 7
+label = "Bugs"
+
+[node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer"]
+margin_left = 68.0
+margin_right = 84.0
+margin_bottom = 344.0
+rect_min_size = Vector2( 16, 0 )

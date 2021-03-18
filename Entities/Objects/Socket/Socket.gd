@@ -5,19 +5,18 @@ extends Area2D
 
 # variables --------------------------------------
 export var socket_id = 0
+var game_scene_id = 0
 export(GEM.SOCKET_TYPES) var socket_type = GEM.SOCKET_TYPES.drain
 export var active = false setget set_active
 export var tab_active = false setget set_tab_active
-export(Texture) var battery_icon
-export(Texture) var charge_icon
-export(Texture) var finish_icon
 export var on_color = Color(1,1,1,1)
 export var off_color = Color(1,1,1,1)
 export var start_end_color = Color(1,1,1,1)
 export var drain_color = Color(1,1,1,1)
 export var charge_color = Color(1,1,1,1)
+export var secret_color = Color(1,1,1,1)
 export var null_color = Color(1,1,1,1)
-export var battery_icon_color = Color(1,1,1,1)
+var battery_icon_color = Color(1,1,1,1)
 var player = null
 var plugged_in = false setget set_plugged_in
 
@@ -30,6 +29,7 @@ func _ready():
 	GSM.connect("cable_charged", self, "_on_cable_charged")
 	
 	init_socket()
+	game_scene_id = GVM.game_scene
 
 
 func _process(delta):
@@ -43,7 +43,7 @@ func _process(delta):
 
 # helper functions --------------------------------------
 func get_input(delta):
-	if player and Input.is_action_just_pressed("plug"):
+	if player and Input.is_action_just_pressed("plug") and not GVM.scene_transition_in_progress:
 		player.socket_align_x = global_position.x
 		self.tab_active = player.alive
 
@@ -51,20 +51,26 @@ func get_input(delta):
 func init_socket():
 	match socket_type:
 		GEM.SOCKET_TYPES.drain:
-			$BatteryIconSprite.texture = battery_icon
+			battery_icon_color = drain_color
 			$SocketSprites/SocketBackground.modulate = null_color
 		GEM.SOCKET_TYPES.charge:
-			$BatteryIconSprite.texture = charge_icon
+			battery_icon_color = charge_color
 			$SocketSprites/SocketBackground.modulate = null_color
 		GEM.SOCKET_TYPES.start:
 			self.active = true
 			self.tab_active = false
 			$BatteryIconSprite.hide()
 			$SocketSprites/SocketBackground.modulate = null_color
-			GSM.emit_signal("socket_plugged", GEM.RESERVED_IDS.start, true)
+#			GSM.emit_signal("socket_plugged", game_scene_id, GEM.RESERVED_IDS.start, true)
 		GEM.SOCKET_TYPES.end:
-			$BatteryIconSprite.texture = finish_icon
+			battery_icon_color = start_end_color
 			$SocketSprites/SocketBackground.modulate = null_color
+		GEM.SOCKET_TYPES.secret:
+			battery_icon_color = secret_color
+			$BatteryIconSprite.hide()
+			$SocketSprites/SocketBackground.modulate = null_color
+	
+	$BatteryIconSprite.modulate = battery_icon_color
 
 
 # set/get functions --------------------------------------
@@ -105,19 +111,21 @@ func set_plugged_in(new_val):
 	
 	if player and not (socket_type == GEM.SOCKET_TYPES.start and not plugged_in) and not (socket_type == GEM.SOCKET_TYPES.drain and player.remaining_power < 1):
 		player.plugged_in = plugged_in
-		GSM.emit_signal("socket_plugged", socket_id, plugged_in)
+		GSM.emit_signal("socket_plugged", game_scene_id, socket_id, plugged_in)
 	elif socket_type != GEM.SOCKET_TYPES.start:
-		GSM.emit_signal("socket_plugged", socket_id, false)
+		GSM.emit_signal("socket_plugged", game_scene_id, socket_id, false)
 	
 	if plugged_in:
 		match socket_type:
 			GEM.SOCKET_TYPES.drain:
 				$SocketSprites/SocketLight.modulate = drain_color
 			GEM.SOCKET_TYPES.charge:
-				GSM.emit_signal("charge_battery")
+				GSM.emit_signal("charge_battery", game_scene_id)
 				$SocketSprites/SocketLight.modulate = charge_color
 			GEM.SOCKET_TYPES.start:
 				$SocketSprites/SocketLight.modulate = start_end_color
+			GEM.SOCKET_TYPES.secret:
+				$SocketSprites/SocketLight.modulate = secret_color
 			GEM.SOCKET_TYPES.end:
 				$SocketSprites/SocketLight.modulate = start_end_color
 	else:
@@ -127,8 +135,8 @@ func set_plugged_in(new_val):
 
 
 # signal functions --------------------------------------
-func _on_cable_charged(cable_id, cable_charged):
-	if socket_type == GEM.SOCKET_TYPES.start and cable_id == GEM.RESERVED_IDS.start and cable_charged and player:
+func _on_cable_charged(new_game_scene_id, cable_id, cable_charged):
+	if game_scene_id == new_game_scene_id and socket_type == GEM.SOCKET_TYPES.start and cable_id == GEM.RESERVED_IDS.start and cable_charged and player:
 		if player.sleep_at_start:
 			self.plugged_in = true
 			$StartDelayTimer.start()
@@ -154,6 +162,8 @@ func _on_TabTween_tween_all_completed():
 
 func _on_StartDelayTimer_timeout():
 	player.sleep_at_start = false
-	Input.action_press("plug")
 	self.tab_active = true
 	$StartDelayTimer.stop()
+	Input.action_press("plug")
+	yield(get_tree(), "idle_frame")
+	Input.action_release("plug")

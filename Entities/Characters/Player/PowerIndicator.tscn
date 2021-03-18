@@ -25,9 +25,13 @@ corner_radius_bottom_left = 4
 [node name="PowerIndicator" type="HSlider"]
 margin_right = 32.0
 margin_bottom = 16.0
+custom_icons/tick = SubResource( 1 )
+custom_icons/grabber_disabled = SubResource( 1 )
+custom_icons/grabber_highlight = SubResource( 1 )
 custom_icons/grabber = SubResource( 1 )
 custom_styles/slider = SubResource( 2 )
 custom_styles/grabber_area = SubResource( 3 )
+editable = false
 scrollable = false
 script = ExtResource( 1 )
 __meta__ = {

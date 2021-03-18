@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Menus/Buttons/MenuButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Fonts/MenuTitle.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Menus/MenuScenes/Menu.gd" type="Script" id=3]
+[ext_resource path="res://Menus/VolumeSlider/VolumeSlider.tscn" type="PackedScene" id=4]
+
+[node name="SettingsMenu" type="VBoxContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -432.0
+margin_top = -222.5
+margin_right = 432.0
+margin_bottom = 222.5
+custom_constants/separation = 16
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+margin_right = 884.0
+margin_bottom = 165.0
+custom_fonts/font = ExtResource( 2 )
+text = "Settings"
+align = 1
+valign = 1
+
+[node name="MusicSlider" parent="." instance=ExtResource( 4 )]
+margin_top = 181.0
+margin_right = 884.0
+margin_bottom = 239.0
+bus_id = 0
+slider_label = "Music Volume"
+
+[node name="EffectsSlider" parent="." instance=ExtResource( 4 )]
+margin_top = 255.0
+margin_right = 884.0
+margin_bottom = 313.0
+bus_id = 1
+slider_label = "Effects Volume"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_top = 329.0
+margin_right = 884.0
+margin_bottom = 424.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 262.0
+margin_right = 622.0
+margin_bottom = 95.0
+custom_constants/separation = 16
+
+[node name="BackButton" parent="HBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
+margin_right = 360.0
+margin_bottom = 95.0
+button_text = "Back"
+
+[node name="MoveTween" type="Tween" parent="."]

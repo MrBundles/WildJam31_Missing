@@ -3,8 +3,10 @@ extends Node
 #enums
 enum ORIENTATIONS {horizontal, vertical, both, neither}
 enum I_MODES {auto, manual, off}
-enum SOCKET_TYPES {start, end, charge, drain}
+enum SOCKET_TYPES {start, end, charge, drain, secret}
 enum RESERVED_IDS {start = 100, end = 200}
+enum MENU_SCENE_IDS {main, level_select, settings, credits, pause, quit, empty, bugs}
+enum SCENE_TRANSITION_TYPES {up, down, left, right}
 
 
 # signals --------------------------------------

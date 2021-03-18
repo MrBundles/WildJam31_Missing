@@ -1,11 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Entities/Objects/Socket/Socket.gd" type="Script" id=1]
 [ext_resource path="res://Entities/Objects/Socket/BatteryIcon.png" type="Texture" id=3]
 [ext_resource path="res://Entities/Objects/Socket/Tab.png" type="Texture" id=4]
 [ext_resource path="res://Resources/Shaders/HideSpriteShader.shader" type="Shader" id=6]
-[ext_resource path="res://Entities/Objects/Socket/ChargeIcon.png" type="Texture" id=9]
-[ext_resource path="res://Entities/Objects/Socket/GoalIcon.png" type="Texture" id=10]
 [ext_resource path="res://Entities/Objects/Socket/SocketFrame.png" type="Texture" id=11]
 [ext_resource path="res://Entities/Objects/Socket/SocketBackground.png" type="Texture" id=12]
 [ext_resource path="res://Entities/Objects/Socket/SocketLight.png" type="Texture" id=13]
@@ -21,17 +19,15 @@ shader_param/h_orientation = false
 shader_param/greater_than = false
 
 [node name="Socket" type="Area2D"]
+collision_mask = 3
 script = ExtResource( 1 )
-battery_icon = ExtResource( 3 )
-charge_icon = ExtResource( 9 )
-finish_icon = ExtResource( 10 )
 on_color = Color( 0.356863, 0.682353, 0.482353, 1 )
 off_color = Color( 0.858824, 0.329412, 0.380392, 1 )
 start_end_color = Color( 0.129412, 0.462745, 0.682353, 1 )
 drain_color = Color( 0.356863, 0.682353, 0.482353, 1 )
 charge_color = Color( 0.960784, 0.796078, 0.360784, 1 )
+secret_color = Color( 0.454902, 0.321569, 0.588235, 1 )
 null_color = Color( 0.960784, 0.796078, 0.360784, 1 )
-battery_icon_color = Color( 0.909804, 0.929412, 0.87451, 1 )
 max_player_align_distance = 350
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -75,7 +71,7 @@ texture = ExtResource( 3 )
 [node name="TabTween" type="Tween" parent="."]
 
 [node name="StartDelayTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.25
 [connection signal="body_entered" from="." to="." method="_on_Socket_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Socket_body_exited"]
 [connection signal="tween_all_completed" from="TabTween" to="." method="_on_TabTween_tween_all_completed"]

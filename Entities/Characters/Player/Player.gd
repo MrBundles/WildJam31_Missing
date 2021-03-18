@@ -13,6 +13,7 @@ onready var left_walk_pivot = $Feet/LeftWalkPivot
 onready var right_walk_pivot = $Feet/RightWalkPivot
 
 # variables --------------------------------------
+var game_scene_id = 0
 var velocity = Vector2.ZERO
 export var velocity_max = Vector2(10,10)
 export var h_accel = 10
@@ -45,6 +46,7 @@ func _ready():
 	GSM.connect("terminal_on", self, "_on_terminal_on")
 	GSM.connect("charge_battery", self, "_on_charge_battery")
 	
+	game_scene_id = GVM.game_scene
 	self.alive = false
 
 
@@ -190,13 +192,14 @@ func set_remaining_power(new_val):
 
 
 # signal functions --------------------------------------
-func _on_terminal_on(terminal_id, terminal_on):
-	if terminal_on:
+func _on_terminal_on(new_game_scene_id, terminal_id, terminal_on):
+	if game_scene_id == new_game_scene_id and terminal_on:
 		self.remaining_power -= 1
 
 
-func _on_charge_battery():
-	self.remaining_power = 5
+func _on_charge_battery(new_game_scene_id):
+	if game_scene_id == new_game_scene_id:
+		self.remaining_power = 5
 
 
 

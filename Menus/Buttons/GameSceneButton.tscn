@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Menus/Buttons/GenericButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Menus/Buttons/GameSceneButton.gd" type="Script" id=2]
+
+[node name="GameSceneButton" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+button_text = "1"
+color_rect_hover_width = 48
+color_rect_pressed_width = 64
+rect_color = Color( 0.129412, 0.462745, 0.682353, 1 )
+
+[node name="ColorRectLeft" parent="." index="0"]
+color = Color( 0.960784, 0.796078, 0.360784, 1 )
+
+[node name="Button" parent="." index="1"]
+margin_right = 116.0
+rect_min_size = Vector2( 116, 116 )
+text = "1"
+
+[node name="ColorRectRight" parent="." index="2"]
+margin_left = 116.0
+margin_right = 116.0
+color = Color( 0.960784, 0.796078, 0.360784, 1 )

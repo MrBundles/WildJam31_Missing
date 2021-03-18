@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Menus/RewindSlider/RewindSlider.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Menus/VolumeSlider/VolumeSlider.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Menus/MenuScenes/Menu.gd" type="Script" id=4]
+[ext_resource path="res://Resources/Fonts/MenuTitle.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Menus/Buttons/GenericButton.tscn" type="PackedScene" id=6]
+
+[node name="BugsMenu" type="VBoxContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -199.5
+margin_top = -340.5
+margin_right = 199.5
+margin_bottom = 340.5
+custom_constants/separation = 16
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+margin_right = 884.0
+margin_bottom = 165.0
+custom_fonts/font = ExtResource( 5 )
+text = "Bug Report"
+align = 1
+valign = 1
+
+[node name="MusicSlider" parent="." instance=ExtResource( 3 )]
+margin_top = 181.0
+margin_right = 884.0
+margin_bottom = 239.0
+bus_id = 0
+slider_label = "Music Volume"
+
+[node name="EffectsSlider" parent="." instance=ExtResource( 3 )]
+margin_top = 255.0
+margin_right = 884.0
+margin_bottom = 313.0
+bus_id = 1
+slider_label = "Effects Volume"
+
+[node name="RewindSlider" parent="." instance=ExtResource( 1 )]
+margin_bottom = 383.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_top = 399.0
+margin_right = 884.0
+margin_bottom = 647.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 262.0
+margin_right = 622.0
+margin_bottom = 248.0
+custom_constants/separation = 16
+
+[node name="GenericButton" parent="HBoxContainer/VBoxContainer" instance=ExtResource( 6 )]
+margin_right = 360.0
+rect_min_size = Vector2( 360, 116 )
+button_text = "Button"
+
+[node name="MenuButton" parent="HBoxContainer/VBoxContainer" instance=ExtResource( 6 )]
+margin_top = 132.0
+margin_right = 360.0
+margin_bottom = 248.0
+rect_min_size = Vector2( 360, 116 )
+
+[node name="MoveTween" type="Tween" parent="."]
