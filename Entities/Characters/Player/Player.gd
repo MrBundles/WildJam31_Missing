@@ -13,7 +13,6 @@ onready var left_walk_pivot = $Feet/LeftWalkPivot
 onready var right_walk_pivot = $Feet/RightWalkPivot
 
 # variables --------------------------------------
-var game_scene_id = 0
 var velocity = Vector2.ZERO
 export var velocity_max = Vector2(10,10)
 export var h_accel = 10
@@ -24,7 +23,7 @@ export var foot_speed_mult = 2.0
 export(int, 0, 200) var push = 100 # this is the players inertia
 
 export var alive = false setget set_alive
-var sleep_at_start = true
+var start_delay = true
 
 export var max_feet_lerp_val = 25.0
 export var leg_color = Color(1,1,1,1)
@@ -34,7 +33,7 @@ export var max_lean_lerp_val = 1.0
 var colliding_with_body = false
 var socket_align_x = -1.0
 var plugged_in = false
-export var remaining_power = 5 setget set_remaining_power
+export var remaining_power = 0 setget set_remaining_power
 
 export(Texture) var happy_face
 export(Texture) var sad_face
@@ -43,10 +42,9 @@ export(Texture) var sad_face
 # main functions --------------------------------------
 func _ready():
 	# connect signals
+	GSM.connect("socket_plugged", self, "_on_socket_plugged")
 	GSM.connect("terminal_on", self, "_on_terminal_on")
-	GSM.connect("charge_battery", self, "_on_charge_battery")
 	
-	game_scene_id = GVM.game_scene
 	self.alive = false
 
 
@@ -91,7 +89,7 @@ func get_input():
 		$CoyoteTimer.stop()
 	
 	#plug input
-	if Input.is_action_just_pressed("plug"):
+	if Input.is_action_just_pressed("plug") and not start_delay:
 		self.alive = !alive
 	
 	#apply gravity
@@ -154,8 +152,6 @@ func socket_align(delta):
 
 # set/get functions --------------------------------------
 func set_alive(new_val):
-	if sleep_at_start:
-		return
 	
 	alive = new_val
 	
@@ -192,14 +188,21 @@ func set_remaining_power(new_val):
 
 
 # signal functions --------------------------------------
-func _on_terminal_on(new_game_scene_id, terminal_id, terminal_on):
-	if game_scene_id == new_game_scene_id and terminal_on:
+func _on_socket_plugged(socket_type, socket_id, _plugged_in):
+	plugged_in = _plugged_in
+	
+	if plugged_in:
+		match socket_type:
+			GEM.SOCKET_TYPES.charge:
+				self.remaining_power = 5
+			GEM.SOCKET_TYPES.start:
+				self.remaining_power = 5
+				start_delay = false
+
+
+func _on_terminal_on(terminal_id, terminal_on):
+	if terminal_on:
 		self.remaining_power -= 1
-
-
-func _on_charge_battery(new_game_scene_id):
-	if game_scene_id == new_game_scene_id:
-		self.remaining_power = 5
 
 
 

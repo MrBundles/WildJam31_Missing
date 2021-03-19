@@ -8,7 +8,7 @@ var active_pos
 
 func _ready():
 	#connect signals
-	GSM.connect("change_menu_scene", self, "_on_change_menu_scene")
+	GSM.connect("change_scene", self, "_on_change_scene")
 	
 	var viewport_width = get_viewport_rect().size.x
 	var rect_width = rect_size.x
@@ -25,13 +25,17 @@ func _ready():
 		init_pos = viewport_width + rect_size.x
 		active_pos = viewport_width * 0.5 - rect_width / 2
 		rect_position.x = init_pos
+	elif menu_scene_id == GEM.MENU_SCENE_IDS.bugs:
+		init_pos = viewport_width + rect_size.x
+		active_pos = viewport_width * 0.5 - rect_width / 2
+		rect_position.x = init_pos
 	else:
 		init_pos = viewport_width + rect_size.x
 		active_pos = viewport_width * 0.7 - rect_width / 2
 		rect_position.x = init_pos
 
 
-func _on_change_menu_scene(new_menu_scene_id):
+func _on_change_scene(new_game_scene_id, new_menu_scene_id):
 	if menu_scene_id == GEM.MENU_SCENE_IDS.empty:
 		pass
 	if menu_scene_id == GEM.MENU_SCENE_IDS.main and (new_menu_scene_id == GEM.MENU_SCENE_IDS.empty or new_menu_scene_id == GEM.MENU_SCENE_IDS.pause or new_menu_scene_id == GEM.MENU_SCENE_IDS.bugs):

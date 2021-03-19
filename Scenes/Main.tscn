@@ -16,6 +16,7 @@ script = ExtResource( 1 )
 [node name="GameScenes" type="Node2D" parent="."]
 
 [node name="MenuScenes" type="CanvasLayer" parent="."]
+pause_mode = 2
 
 [node name="MainMenu" parent="MenuScenes" instance=ExtResource( 7 )]
 
@@ -35,7 +36,6 @@ menu_scene_id = 4
 menu_scene_id = 6
 
 [node name="BugsMenu" parent="MenuScenes" instance=ExtResource( 3 )]
-menu_scene_id = 7
 
 [node name="BackgroundCanvasLayer" parent="." instance=ExtResource( 9 )]
 

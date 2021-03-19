@@ -13,8 +13,11 @@ scale = Vector2( 1.11111, 1 )
 z_index = -1
 curve = SubResource( 1 )
 script = ExtResource( 1 )
-on_color = Color( 0.356863, 0.682353, 0.482353, 1 )
-off_color = Color( 0.2, 0.207843, 0.2, 1 )
+start_end_color = Color( 0.129412, 0.462745, 0.682353, 1 )
+drain_color = Color( 0.356863, 0.682353, 0.482353, 1 )
+charge_color = Color( 0.960784, 0.796078, 0.360784, 1 )
+secret_color = Color( 0.454902, 0.321569, 0.588235, 1 )
+null_color = Color( 0.505882, 0.533333, 0.517647, 1 )
 
 [node name="Tween" type="Tween" parent="."]
 [connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]

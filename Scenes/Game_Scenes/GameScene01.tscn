@@ -1,7 +1,6 @@
 [gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Resources/Tilesets/MainTileset.png" type="Texture" id=1]
-[ext_resource path="res://Entities/Objects/Interactables/DoorInteractable/DoorInteractable.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Entities/Objects/Interactables/TileMap/InteractableTileMap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Entities/Characters/Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Entities/Objects/Cable/Cable.tscn" type="PackedScene" id=5]
@@ -316,6 +315,11 @@ _data = {
 "points": PoolVector2Array( 6.7959, 111.377, -6.7959, -111.377, 1526.4, 544, 0, 160.459, 0, -160.459, 1612.8, 288, 32.2805, 24.5407, -32.2805, -24.5407, 1324.8, 96, 1.69898, 109.489, -1.69898, -109.489, 1296, -32 )
 }
 
+[sub_resource type="Curve2D" id=17]
+_data = {
+"points": PoolVector2Array( 18, 170, -18, -170, 115.2, 416, 14.4, 94, -14.4, -94, 230.4, 256, -23.4, 96, 23.4, -96, 57.6001, 128, 18, 164, -18, -164, 230.4, -32 )
+}
+
 [node name="GameScene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
@@ -336,15 +340,22 @@ cable_id = 1
 self_modulate = Color( 1, 1, 1, 1 )
 curve = SubResource( 15 )
 cable_id = 100
+cable_type = 0
 power_progress_mult = 650
-on_color = Color( 0.129412, 0.462745, 0.682353, 1 )
 
 [node name="Cable3" parent="." instance=ExtResource( 5 )]
 self_modulate = Color( 1, 1, 1, 1 )
 curve = SubResource( 16 )
 cable_id = 200
+cable_type = 1
 power_progress_mult = 650
-on_color = Color( 0.129412, 0.462745, 0.682353, 1 )
+
+[node name="Cable4" parent="." instance=ExtResource( 5 )]
+self_modulate = Color( 1, 1, 1, 1 )
+curve = SubResource( 17 )
+cable_id = 5
+cable_type = 4
+power_progress_mult = 650
 
 [node name="Socket" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1632, 512 )
@@ -366,6 +377,7 @@ socket_type = 2
 
 [node name="Socket5" parent="." instance=ExtResource( 6 )]
 position = Vector2( 64, 384 )
+socket_id = 5
 socket_type = 4
 
 [node name="Terminal" parent="." instance=ExtResource( 7 )]
@@ -376,24 +388,27 @@ margin_bottom = 672.0
 terminal_id = 1
 on = false
 
-[node name="DoorInteractable" parent="." instance=ExtResource( 2 )]
-
 [node name="Conveyor1" parent="." instance=ExtResource( 3 )]
 tile_data = PoolIntArray( 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0 )
 interactable_id = 1
-active_color = Color( 0.356863, 0.682353, 0.482353, 1 )
-inactive_color = Color( 0.505882, 0.533333, 0.517647, 1 )
 speed_max = Vector2( 100, 0 )
+speed_min = Vector2( -100, 0 )
 accel = Vector2( 10, 0 )
 decel = Vector2( 10, 0 )
 
 [node name="Conveyor2" parent="." instance=ExtResource( 3 )]
 tile_data = PoolIntArray( 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0 )
 active = true
-active_color = Color( 0.356863, 0.682353, 0.482353, 1 )
-inactive_color = Color( 0.505882, 0.533333, 0.517647, 1 )
+active_color = Color( 0.960784, 0.796078, 0.360784, 1 )
 i_mode = 0
 auto_speed = Vector2( 100, 0 )
 speed_max = Vector2( 200, 0 )
+speed_min = Vector2( -200, 0 )
 accel = Vector2( 10, 0 )
 decel = Vector2( 10, 0 )
+
+[node name="Door1" parent="." instance=ExtResource( 3 )]
+tile_data = PoolIntArray( 917524, 2, 0, 917525, 2, 0, 983060, 2, 0, 983061, 2, 0 )
+interactable_id = 1
+accel = Vector2( 1, 1 )
+orientation = 1

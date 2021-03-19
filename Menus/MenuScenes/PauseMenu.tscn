@@ -53,7 +53,6 @@ valign = 1
 margin_top = 181.0
 margin_right = 884.0
 margin_bottom = 239.0
-bus_id = 0
 slider_label = "Music Volume"
 
 [node name="EffectsSlider" parent="PauseMenu" instance=ExtResource( 6 )]
@@ -79,6 +78,7 @@ custom_constants/separation = 16
 margin_right = 360.0
 margin_bottom = 95.0
 button_text = "Resume"
+game_scene_id = -1
 menu_scene_id = 6
 
 [node name="MenuButton" parent="PauseMenu/HBoxContainer/VBoxContainer" instance=ExtResource( 1 )]

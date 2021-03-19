@@ -6,12 +6,12 @@
 [node name="GameSceneButton" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 button_text = "1"
+menu_scene_id = 6
 color_rect_hover_width = 48
 color_rect_pressed_width = 64
-rect_color = Color( 0.129412, 0.462745, 0.682353, 1 )
 
 [node name="ColorRectLeft" parent="." index="0"]
-color = Color( 0.960784, 0.796078, 0.360784, 1 )
+color = Color( 0.129412, 0.462745, 0.682353, 1 )
 
 [node name="Button" parent="." index="1"]
 margin_right = 116.0
@@ -21,4 +21,4 @@ text = "1"
 [node name="ColorRectRight" parent="." index="2"]
 margin_left = 116.0
 margin_right = 116.0
-color = Color( 0.960784, 0.796078, 0.360784, 1 )
+color = Color( 0.129412, 0.462745, 0.682353, 1 )

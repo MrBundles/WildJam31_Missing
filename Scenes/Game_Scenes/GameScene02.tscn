@@ -1,10 +1,10 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Entities/Characters/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Objects/Interactables/TileMap/InteractableTileMap.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Entities/Objects/Cable/Cable.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Entities/Objects/Terminal/Terminal.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Entities/Objects/Socket/Socket.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Entities/Objects/Interactables/DoorInteractable/DoorInteractable.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Resources/Tilesets/MainTileset.png" type="Texture" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -297,6 +297,11 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 11/z_index = 0
 
+[sub_resource type="Curve2D" id=14]
+_data = {
+"points": PoolVector2Array( 34.8132, 191.724, -34.8132, -191.724, 1641.6, 1056, 147.577, 81.567, -147.577, -81.567, 1641.6, 672, 189.202, 0.840896, -189.202, -0.840896, 1324.8, 576, 40.8676, -6.72717, -40.8676, 6.72717, 1036.8, 672, 42.3812, 0.840896, -42.3812, -0.840896, 921.601, 672 )
+}
+
 [sub_resource type="Curve2D" id=15]
 resource_local_to_scene = true
 _data = {
@@ -319,24 +324,33 @@ tile_set = SubResource( 13 )
 format = 1
 tile_data = PoolIntArray( -1, 7, 0, -65536, 7, 0, -65535, 7, 0, -65534, 7, 0, -65533, 7, 0, -65532, 7, 0, -65531, 7, 0, -65530, 7, 0, -65529, 7, 0, -65528, 7, 0, -65527, 7, 0, -65526, 7, 0, -65525, 7, 0, -65524, 7, 0, -65523, 7, 0, -65522, 7, 0, -65521, 7, 0, -65520, 7, 0, -65519, 7, 0, -65518, 7, 0, -65517, 7, 0, -65516, 7, 0, -65515, 7, 0, -65514, 7, 0, -65513, 7, 0, -65512, 7, 0, -65511, 7, 0, -65510, 7, 0, -65509, 7, 0, -65508, 7, 0, -65507, 7, 0, -65506, 7, 0, 65535, 7, 0, 30, 7, 0, 131071, 7, 0, 65566, 7, 0, 196607, 7, 0, 131102, 7, 0, 262143, 7, 0, 196617, 7, 0, 196618, 7, 0, 196619, 7, 0, 196620, 7, 0, 196621, 7, 0, 196622, 7, 0, 196623, 7, 0, 196624, 7, 0, 196625, 7, 0, 196626, 7, 0, 196627, 7, 0, 196628, 7, 0, 196629, 7, 0, 196630, 7, 0, 196631, 7, 0, 196632, 7, 0, 196633, 7, 0, 196638, 7, 0, 327679, 7, 0, 262174, 7, 0, 393215, 7, 0, 327710, 7, 0, 458751, 7, 0, 393216, 7, 0, 393217, 7, 0, 393218, 7, 0, 393219, 7, 0, 393220, 7, 0, 393221, 7, 0, 393222, 7, 0, 393223, 7, 0, 393246, 7, 0, 524287, 7, 0, 458782, 7, 0, 589823, 7, 0, 524314, 7, 0, 524315, 7, 0, 524316, 7, 0, 524317, 7, 0, 524318, 7, 0, 655359, 7, 0, 589834, 7, 0, 589835, 7, 0, 589836, 7, 0, 589837, 7, 0, 589854, 7, 0, 720895, 7, 0, 655390, 7, 0, 786431, 7, 0, 720926, 7, 0, 851967, 7, 0, 786432, 7, 0, 786433, 7, 0, 786434, 7, 0, 786462, 7, 0, 917503, 7, 0, 851968, 7, 0, 851969, 7, 0, 851970, 7, 0, 851998, 7, 0, 983039, 7, 0, 917504, 7, 0, 917505, 7, 0, 917506, 7, 0, 917534, 7, 0, 1048575, 7, 0, 983040, 7, 0, 983041, 7, 0, 983042, 7, 0, 983070, 7, 0, 1114111, 7, 0, 1048576, 7, 0, 1048577, 7, 0, 1048578, 7, 0, 1048579, 7, 0, 1048580, 7, 0, 1048581, 7, 0, 1048582, 7, 0, 1048583, 7, 0, 1048584, 7, 0, 1048585, 7, 0, 1048586, 7, 0, 1048587, 7, 0, 1048588, 7, 0, 1048589, 7, 0, 1048590, 7, 0, 1048591, 7, 0, 1048592, 7, 0, 1048593, 7, 0, 1048594, 7, 0, 1048595, 7, 0, 1048596, 7, 0, 1048597, 7, 0, 1048598, 7, 0, 1048599, 7, 0, 1048600, 7, 0, 1048601, 7, 0, 1048602, 7, 0, 1048603, 7, 0, 1048604, 7, 0, 1048605, 7, 0, 1048606, 7, 0 )
 
+[node name="Cable1" parent="." instance=ExtResource( 3 )]
+self_modulate = Color( 1, 1, 1, 1 )
+curve = SubResource( 14 )
+cable_id = 1
+power_progress_mult = 650
+
 [node name="Cable2" parent="." instance=ExtResource( 3 )]
 self_modulate = Color( 1, 1, 1, 1 )
 curve = SubResource( 15 )
 cable_id = 100
+cable_type = 0
 power_progress_mult = 650
-on_color = Color( 0.129412, 0.462745, 0.682353, 1 )
 
 [node name="Cable3" parent="." instance=ExtResource( 3 )]
 self_modulate = Color( 1, 1, 1, 1 )
 curve = SubResource( 16 )
 cable_id = 200
 power_progress_mult = 650
-on_color = Color( 0.129412, 0.462745, 0.682353, 1 )
 
 [node name="Socket" parent="." instance=ExtResource( 5 )]
 position = Vector2( 608, 1024 )
 socket_id = 100
 socket_type = 0
+
+[node name="Socket1" parent="." instance=ExtResource( 5 )]
+position = Vector2( 96, 768 )
+socket_type = 2
 
 [node name="Socket2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1824, 512 )
@@ -344,20 +358,30 @@ socket_id = 200
 socket_type = 1
 
 [node name="Socket4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 96, 768 )
-socket_type = 2
+position = Vector2( 1760, 1024 )
+socket_id = 1
 
 [node name="Socket5" parent="." instance=ExtResource( 5 )]
 position = Vector2( 64, 384 )
 socket_type = 4
 
-[node name="DoorInteractable" parent="." instance=ExtResource( 6 )]
-
 [node name="Conveyor1" parent="." instance=ExtResource( 2 )]
 tile_data = PoolIntArray( 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0 )
 interactable_id = 1
-active_color = Color( 0.356863, 0.682353, 0.482353, 1 )
-inactive_color = Color( 0.505882, 0.533333, 0.517647, 1 )
 speed_max = Vector2( 100, 0 )
 accel = Vector2( 10, 0 )
 decel = Vector2( 10, 0 )
+
+[node name="Door1" parent="." instance=ExtResource( 2 )]
+tile_data = PoolIntArray( 786435, 2, 0, 786436, 2, 0, 786437, 2, 0, 786438, 2, 0, 786439, 2, 0, 851971, 2, 0, 851972, 2, 0, 851973, 2, 0, 851974, 2, 0, 851975, 2, 0, 917507, 2, 0, 917508, 2, 0, 917509, 2, 0, 917510, 2, 0, 917511, 2, 0, 983043, 2, 0, 983044, 2, 0, 983045, 2, 0, 983046, 2, 0, 983047, 2, 0 )
+interactable_id = 1
+speed = Vector2( 0, 1000 )
+accel = Vector2( 2, 2 )
+orientation = 1
+
+[node name="Terminal" parent="." instance=ExtResource( 4 )]
+margin_left = 960.0
+margin_top = 608.0
+margin_right = 1024.0
+margin_bottom = 736.0
+terminal_id = 1

@@ -32,7 +32,6 @@ valign = 1
 margin_top = 181.0
 margin_right = 884.0
 margin_bottom = 239.0
-bus_id = 0
 slider_label = "Music Volume"
 
 [node name="EffectsSlider" parent="." instance=ExtResource( 4 )]
@@ -45,18 +44,17 @@ slider_label = "Effects Volume"
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_top = 329.0
 margin_right = 884.0
-margin_bottom = 424.0
+margin_bottom = 445.0
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 margin_left = 262.0
 margin_right = 622.0
-margin_bottom = 95.0
+margin_bottom = 116.0
 custom_constants/separation = 16
 
 [node name="BackButton" parent="HBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_right = 360.0
-margin_bottom = 95.0
 button_text = "Back"
 
 [node name="MoveTween" type="Tween" parent="."]

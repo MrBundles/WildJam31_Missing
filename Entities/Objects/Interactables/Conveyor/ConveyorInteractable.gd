@@ -35,27 +35,27 @@ func _process(delta):
 
 # helper functions --------------------------------------
 func get_input():
-		if Input.is_action_pressed("ui_left") and active:
-			speed.x = clamp(speed.x - accel.x, -speed_max.x, speed_max.x)
-		elif Input.is_action_pressed("ui_right") and active:
-			speed.x = clamp(speed.x + accel.x, -speed_max.x, speed_max.x)
-		elif speed.x <= -decel.x:
-			speed.x = clamp(speed.x + decel.x, -speed_max.x, speed_max.x)
-		elif speed.x >= decel.x:
-			speed.x = clamp(speed.x - decel.x, -speed_max.x, speed_max.x)
-		else:
-			speed.x = 0
-		
-		if Input.is_action_pressed("ui_up") and active:
-			speed.y = clamp(speed.x - accel.y, -speed_max.y, speed_max.y)
-		elif Input.is_action_pressed("ui_down") and active:
-			speed.y = clamp(speed.y + accel.y, -speed_max.y, speed_max.y)
-		elif speed.y <= -decel.y:
-			speed.y = clamp(speed.y + decel.y, -speed_max.y, speed_max.y)
-		elif speed.y >= decel.y:
-			speed.y = clamp(speed.y - decel.y, -speed_max.y, speed_max.y)
-		else:
-			speed.y = 0
+	if Input.is_action_pressed("ui_left") and active:
+		speed.x = clamp(speed.x - accel.x, speed_min.x, speed_max.x)
+	elif Input.is_action_pressed("ui_right") and active:
+		speed.x = clamp(speed.x + accel.x, speed_min.x, speed_max.x)
+	elif speed.x <= -decel.x:
+		speed.x = clamp(speed.x + decel.x, speed_min.x, speed_max.x)
+	elif speed.x >= decel.x:
+		speed.x = clamp(speed.x - decel.x, speed_min.x, speed_max.x)
+	else:
+		speed.x = 0
+	
+	if Input.is_action_pressed("ui_up") and active:
+		speed.y = clamp(speed.y - accel.y, speed_min.y, speed_max.y)
+	elif Input.is_action_pressed("ui_down") and active:
+		speed.y = clamp(speed.y + accel.y, speed_min.y, speed_max.y)
+	elif speed.y <= -decel.y:
+		speed.y = clamp(speed.y + decel.y, speed_min.y, speed_max.y)
+	elif speed.y >= decel.y:
+		speed.y = clamp(speed.y - decel.y, speed_min.y, speed_max.y)
+	else:
+		speed.y = 0
 
 
 func init_conveyor_color():

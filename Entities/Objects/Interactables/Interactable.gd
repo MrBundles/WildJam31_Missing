@@ -19,9 +19,16 @@ export(GEM.I_MODES) var i_mode = GEM.I_MODES.manual
 export var auto_speed = Vector2.ZERO
 export var speed = Vector2.ZERO
 export var speed_max = Vector2.ZERO
+export var speed_min = Vector2.ZERO
 export var accel = Vector2.ZERO
 export var decel = Vector2.ZERO
 export(GEM.ORIENTATIONS) var orientation = GEM.ORIENTATIONS.horizontal
+
+var left_limit = 1000
+var right_limit = -1000
+var upper_limit = 1000
+var lower_limit = -1000
+
 
 
 # main functions --------------------------------------

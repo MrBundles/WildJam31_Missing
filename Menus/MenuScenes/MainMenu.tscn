@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Menus/Buttons/GenericButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Fonts/MenuTitle.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Menus/MenuScenes/Menu.gd" type="Script" id=3]
 [ext_resource path="res://Menus/Buttons/MenuButton.tscn" type="PackedScene" id=4]
@@ -30,39 +29,40 @@ valign = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_top = 169.0
 margin_right = 399.0
-margin_bottom = 597.0
+margin_bottom = 681.0
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 margin_left = 19.0
 margin_right = 379.0
-margin_bottom = 428.0
+margin_bottom = 512.0
 custom_constants/separation = 16
 
 [node name="LevelSelectButton" parent="HBoxContainer/VBoxContainer" instance=ExtResource( 4 )]
 margin_right = 360.0
-margin_bottom = 95.0
 button_text = "Level Select"
 menu_scene_id = 1
 
 [node name="SettingsButton" parent="HBoxContainer/VBoxContainer" instance=ExtResource( 4 )]
-margin_top = 111.0
+margin_top = 132.0
 margin_right = 360.0
-margin_bottom = 206.0
+margin_bottom = 248.0
 button_text = "Settings"
 menu_scene_id = 2
 
 [node name="CreditsButton" parent="HBoxContainer/VBoxContainer" instance=ExtResource( 4 )]
-margin_top = 222.0
+margin_top = 264.0
 margin_right = 360.0
-margin_bottom = 317.0
+margin_bottom = 380.0
 button_text = "Credits"
 menu_scene_id = 3
 
-[node name="QuitButton" parent="HBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
-margin_top = 333.0
+[node name="QuitButton" parent="HBoxContainer/VBoxContainer" instance=ExtResource( 4 )]
+margin_top = 396.0
 margin_right = 360.0
-margin_bottom = 428.0
+margin_bottom = 512.0
 button_text = "Quit"
+menu_scene_id = 5
+rect_color = Color( 0.356863, 0.682353, 0.482353, 1 )
 
 [node name="MoveTween" type="Tween" parent="."]

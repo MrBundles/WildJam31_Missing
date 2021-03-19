@@ -7,7 +7,7 @@ extends HSlider
 export var id = 0
 export var delay_mult = 0.1
 var active = true setget set_active
-var power_on = true setget set_power_on
+var power_on = false setget set_power_on
 
 # main functions --------------------------------------
 func _ready():

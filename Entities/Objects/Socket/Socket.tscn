@@ -70,9 +70,9 @@ texture = ExtResource( 3 )
 
 [node name="TabTween" type="Tween" parent="."]
 
-[node name="StartDelayTimer" type="Timer" parent="."]
-wait_time = 0.25
+[node name="DelayTimer" type="Timer" parent="."]
+wait_time = 0.5
 [connection signal="body_entered" from="." to="." method="_on_Socket_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Socket_body_exited"]
 [connection signal="tween_all_completed" from="TabTween" to="." method="_on_TabTween_tween_all_completed"]
-[connection signal="timeout" from="StartDelayTimer" to="." method="_on_StartDelayTimer_timeout"]
+[connection signal="timeout" from="DelayTimer" to="." method="_on_DelayTimer_timeout"]

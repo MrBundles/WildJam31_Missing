@@ -35,6 +35,7 @@ config/icon="res://icon.png"
 GSM="*res://Globals/GlobalSignalManager.gd"
 GEM="*res://Globals/GlobalEnumManager.gd"
 GVM="*res://Globals/GlobalVariableManager.gd"
+GAM="*res://Globals/GlobalAudioManager.tscn"
 
 [display]
 
@@ -88,6 +89,6 @@ plug={
 
 [rendering]
 
-2d/snapping/use_gpu_pixel_snap=true
-environment/default_environment="res://default_env.tres"
 quality/2d/use_pixel_snap=true
+environment/default_environment="res://default_env.tres"
+2d/snapping/use_gpu_pixel_snap=true

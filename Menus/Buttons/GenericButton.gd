@@ -4,6 +4,8 @@ class_name GenericButton
 
 #variables
 export var button_text = "Button" setget set_button_text
+export var game_scene_id = 0
+export(GEM.MENU_SCENE_IDS) var menu_scene_id = GEM.MENU_SCENE_IDS.main
 export var signal_name = ""
 export var color_rect_hover_width = 128
 export var color_rect_pressed_width = 192
@@ -25,7 +27,8 @@ func set_button_text(new_val):
 
 
 func _on_Button_mouse_entered():
-	color_rect_tween(color_rect_hover_width)
+	if not $Button.disabled:
+		color_rect_tween(color_rect_hover_width)
 
 
 func _on_Button_mouse_exited():
@@ -42,6 +45,7 @@ func color_rect_tween(new_width):
 func _on_Button_button_down():
 	color_rect_tween(color_rect_pressed_width)
 	GSM.emit_signal(signal_name)
+	GSM.emit_signal("change_scene", game_scene_id, menu_scene_id)
 
 
 func _on_Button_button_up():

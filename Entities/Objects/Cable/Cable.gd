@@ -5,14 +5,19 @@ extends Path2D
 
 # variables --------------------------------------
 export var cable_id = 0
-var game_scene_id = 0
+export(GEM.CABLE_TYPES) var cable_type = GEM.CABLE_TYPES.drain
 var power_progress = 0.0
 var cable_charged = false
 export var power_progress_mult = 1000
-export var on_color = Color(1,1,1,1)
-export var off_color = Color(1,1,1,1)
+var on_color = Color(1,1,1,1)
+var off_color = Color(1,1,1,1)
 export var cable_width = 10
 export(GEM.SCENE_TRANSITION_TYPES) var scene_transition_type = GEM.SCENE_TRANSITION_TYPES.up
+export var start_end_color = Color(1,1,1,1)
+export var drain_color = Color(1,1,1,1)
+export var charge_color = Color(1,1,1,1)
+export var secret_color = Color(1,1,1,1)
+export var null_color = Color(1,1,1,1)
 
 export var active = false setget set_active
 
@@ -22,7 +27,7 @@ func _ready():
 	# connect signals
 	GSM.connect("socket_plugged", self, "_on_socket_plugged")
 	
-	game_scene_id = GVM.game_scene
+	init_cable()
 	
 
 func _process(delta):
@@ -41,6 +46,24 @@ func _draw():
 
 
 # helper functions --------------------------------------
+func init_cable():
+	#set off color
+	off_color = null_color
+	
+	#set on color and start active
+	match cable_type:
+		GEM.CABLE_TYPES.drain:
+			on_color = drain_color
+		GEM.CABLE_TYPES.charge:
+			on_color = charge_color
+		GEM.CABLE_TYPES.start:
+			on_color = start_end_color
+			self.active = true
+		GEM.CABLE_TYPES.end:
+			on_color = start_end_color
+		GEM.CABLE_TYPES.secret:
+			on_color = secret_color
+			off_color.a = 0
 
 
 # set/get functions --------------------------------------
@@ -53,21 +76,19 @@ func set_active(new_val):
 	
 	if active:
 		$Tween.interpolate_property(self, "power_progress", power_progress, 1.0, tween_duration, Tween.TRANS_LINEAR, Tween.EASE_IN, 0.0)
-	else:
-		GSM.emit_signal("cable_charged", game_scene_id, cable_id, false)
+	elif cable_type != GEM.CABLE_TYPES.secret:
 		$Tween.interpolate_property(self, "power_progress", power_progress, 0.0, tween_duration, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0.0)
-	
+		GSM.emit_signal("cable_charged", cable_type, cable_id, false, scene_transition_type)
+		
 	$Tween.start()
 	
 	
 # signal functions --------------------------------------
-func _on_socket_plugged(new_game_scene_id, socket_id, plugged_in):
-	if game_scene_id == new_game_scene_id and socket_id == cable_id and not GVM.scene_transition_in_progress:
+func _on_socket_plugged(socket_type, socket_id, plugged_in):
+	if socket_id == cable_id and cable_type != GEM.CABLE_TYPES.start:
 		self.active = plugged_in
 
 
 func _on_Tween_tween_all_completed():
 	if power_progress == 1.0:
-		GSM.emit_signal("cable_charged", game_scene_id, cable_id, true)
-		if cable_id == GEM.RESERVED_IDS.end:
-			GSM.emit_signal("level_complete", scene_transition_type)
+		GSM.emit_signal("cable_charged", cable_type, cable_id, true, scene_transition_type)

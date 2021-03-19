@@ -1,14 +1,5 @@
 extends Node
 
-#enums
-enum ORIENTATIONS {horizontal, vertical, both, neither}
-enum I_MODES {auto, manual, off}
-enum SOCKET_TYPES {start, end, charge, drain, secret}
-enum CABLE_TYPES {start, end, charge, drain, secret}
-enum MENU_SCENE_IDS {main, level_select, settings, credits, pause, quit, empty, bugs}
-enum SCENE_TRANSITION_TYPES {up, down, left, right}
-
-
 # signals --------------------------------------
 
 
@@ -18,8 +9,8 @@ enum SCENE_TRANSITION_TYPES {up, down, left, right}
 # main functions --------------------------------------
 func _ready():
 	# connect signals
-	
-	pass
+	GSM.connect("change_bus_volume", self, "change_bus_volume")
+	GSM.connect("change_bus_mute", self, "change_bus_mute")
 
 
 func _process(delta):
@@ -33,3 +24,11 @@ func _process(delta):
 
 
 # signal functions --------------------------------------
+func change_bus_volume(bus_id, new_val):
+	AudioServer.set_bus_volume_db(bus_id, new_val)
+	GSM.emit_signal("bus_volume_changed", bus_id, new_val)
+
+
+func change_bus_mute(bus_id, new_val):
+	AudioServer.set_bus_mute(bus_id, new_val)
+	GSM.emit_signal("bus_mute_changed", bus_id, new_val)

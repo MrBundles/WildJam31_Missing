@@ -3,6 +3,7 @@ extends Button
 
 #variables
 export(Texture) var icon_texture setget set_icon_texture
+export var game_scene_id = -1
 export(GEM.MENU_SCENE_IDS) var menu_scene_id = GEM.MENU_SCENE_IDS.pause
 export(Array, String) var additional_signals = []
 export var rotation_speed = 1000
@@ -29,7 +30,7 @@ func set_icon_texture(new_val):
 
 func _on_UIButton_pressed():
 	tween_rotation(0, Color(1,1,1,0))
-	GSM.emit_signal("change_menu_scene", menu_scene_id)
+	GSM.emit_signal("change_scene", game_scene_id, menu_scene_id)
 	for signal_name in additional_signals:
 		GSM.emit_signal(signal_name)
 

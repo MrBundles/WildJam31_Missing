@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Entities/Objects/Interactables/Door/DoorInteractable.gd" type="Script" id=1]
+[ext_resource path="res://Entities/Objects/Interactables/Door/DoorBackground.png" type="Texture" id=2]
+
+[sub_resource type="Shader" id=5]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform vec2 max_limit = vec2(0.0);
+uniform vec2 min_limit = vec2(0.0);
+uniform bool h_orientation = false;
+uniform bool greater_than = false;
+
+void fragment(){
+	vec2 uv_scaled = UV * vec2(textureSize(TEXTURE, 0));
+	COLOR = texture(TEXTURE, UV);
+	
+	int perm = 0;
+	
+	if(h_orientation && greater_than && uv_scaled.x < limit.x){
+		perm++;
+	}else if(h_orientation && !greater_than && uv_scaled.x > limit.x){
+		perm++;
+	}else if(!h_orientation && greater_than && uv_scaled.y < limit.y){
+		perm++;
+	}else if(!h_orientation && !greater_than && uv_scaled.y > limit.y){
+		perm++;
+	}
+	
+	if(perm == 0){
+		COLOR.a = texture(TEXTURE, UV).a;
+	}
+	else{
+		COLOR.a = 0.0;
+		}
+}"
+
+[sub_resource type="ShaderMaterial" id=4]
+resource_local_to_scene = true
+shader = SubResource( 5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+resource_local_to_scene = true
+extents = Vector2( 32, 32 )
+
+[node name="DoorInteractable" type="RigidBody2D"]
+mode = 3
+can_sleep = false
+script = ExtResource( 1 )
+speed_max = Vector2( 0, 64 )
+accel = Vector2( 0, 1 )
+decel = Vector2( 0, 1 )
+orientation = 1
+
+[node name="BackgroundSprite" type="Sprite" parent="."]
+material = SubResource( 4 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 3 )
