@@ -8,10 +8,12 @@ export(GEM.MENU_SCENE_IDS) var menu_scene_id = GEM.MENU_SCENE_IDS.pause
 export(Array, String) var additional_signals = []
 export var rotation_speed = 1000
 export var label = "" setget set_label
+export var color = Color(1,1,1,1)
 
 
 func _ready():
-	$Label.modulate = Color(1,1,1,0)
+	modulate = color
+	$Label.modulate.a = 0
 
 
 func set_label(new_val):

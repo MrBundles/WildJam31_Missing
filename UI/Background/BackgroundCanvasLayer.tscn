@@ -1,14 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://UI/Background/BGParticleShape.png" type="Texture" id=1]
 [ext_resource path="res://UI/Background/BackgroundCanvasLayer.gd" type="Script" id=2]
+[ext_resource path="res://Entities/Objects/Socket/Tab.png" type="Texture" id=3]
 
-[sub_resource type="Shader" id=1]
-
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
-
-[sub_resource type="Curve" id=3]
+[sub_resource type="Curve" id=1]
 _data = [ Vector2( 0, 0 ), 0.0, 3.54231, 0, 0, Vector2( 0.469055, 0.727273 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -3.02348, 0.0, 0, 0 ]
 
 [node name="BackgroundCanvasLayer" type="CanvasLayer"]
@@ -16,10 +12,9 @@ layer = -1
 script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.323, 0.34, 0.330367, 1 )
+color = Color( 0.96, 1, 0.96, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -37,5 +32,26 @@ initial_velocity = 5.0
 initial_velocity_random = 1.0
 scale_amount = 1.5
 scale_amount_random = 1.0
-scale_amount_curve = SubResource( 3 )
-color = Color( 0.2945, 0.31, 0.301217, 1 )
+scale_amount_curve = SubResource( 1 )
+color = Color( 0.8736, 0.91, 0.8736, 1 )
+
+[node name="DebrisCPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2( 0, -500 )
+emitting = false
+amount = 50
+lifetime = 3.0
+one_shot = true
+explosiveness = 0.5
+texture = ExtResource( 3 )
+emission_shape = 2
+emission_rect_extents = Vector2( 960, 64 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 98 )
+initial_velocity = 1000.0
+initial_velocity_random = 0.5
+angular_velocity = 300.0
+angular_velocity_random = 1.0
+scale_amount = 20.0
+scale_amount_random = 1.0
+color = Color( 0.8736, 0.91, 0.8736, 1 )

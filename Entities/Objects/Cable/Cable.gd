@@ -9,6 +9,7 @@ export(GEM.CABLE_TYPES) var cable_type = GEM.CABLE_TYPES.drain
 var power_progress = 0.0
 var cable_charged = false
 export var power_progress_mult = 1000
+export var power_progress_mult_debug = 2000
 var on_color = Color(1,1,1,1)
 var off_color = Color(1,1,1,1)
 export var cable_width = 10
@@ -26,6 +27,9 @@ export var active = false setget set_active
 func _ready():
 	# connect signals
 	GSM.connect("socket_plugged", self, "_on_socket_plugged")
+	
+	if GVM.debug_mode:
+		power_progress_mult = power_progress_mult_debug
 	
 	init_cable()
 	
@@ -68,6 +72,9 @@ func init_cable():
 
 # set/get functions --------------------------------------
 func set_active(new_val):
+	if cable_type == GEM.CABLE_TYPES.secret and not new_val:
+		return
+	
 	active = new_val
 	
 	var tween_duration = curve.get_baked_length() / power_progress_mult
@@ -76,7 +83,7 @@ func set_active(new_val):
 	
 	if active:
 		$Tween.interpolate_property(self, "power_progress", power_progress, 1.0, tween_duration, Tween.TRANS_LINEAR, Tween.EASE_IN, 0.0)
-	elif cable_type != GEM.CABLE_TYPES.secret:
+	else:
 		$Tween.interpolate_property(self, "power_progress", power_progress, 0.0, tween_duration, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0.0)
 		GSM.emit_signal("cable_charged", cable_type, cable_id, false, scene_transition_type)
 		

@@ -24,6 +24,7 @@ __meta__ = {
 margin_right = 360.0
 margin_bottom = 165.0
 custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.2, 0.207843, 0.2, 1 )
 text = "Credits"
 align = 1
 valign = 1
@@ -42,7 +43,8 @@ size_flags_horizontal = 3
 margin_right = 174.0
 margin_bottom = 41.0
 custom_fonts/font = ExtResource( 4 )
-text = "Music Credits"
+custom_colors/font_color = Color( 0.2, 0.207843, 0.2, 1 )
+text = "Programming"
 align = 1
 
 [node name="Art" type="Label" parent="HSplitContainer/VBoxContainer2"]
@@ -50,7 +52,8 @@ margin_top = 45.0
 margin_right = 174.0
 margin_bottom = 86.0
 custom_fonts/font = ExtResource( 4 )
-text = "Music Credits"
+custom_colors/font_color = Color( 0.2, 0.207843, 0.2, 1 )
+text = "Visuals"
 align = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
@@ -63,7 +66,8 @@ size_flags_horizontal = 3
 margin_right = 174.0
 margin_bottom = 41.0
 custom_fonts/font = ExtResource( 4 )
-text = "Music Credits"
+custom_colors/font_color = Color( 0.2, 0.207843, 0.2, 1 )
+text = "Music"
 align = 1
 
 [node name="Effects" type="Label" parent="HSplitContainer/VBoxContainer"]
@@ -71,23 +75,23 @@ margin_top = 45.0
 margin_right = 174.0
 margin_bottom = 86.0
 custom_fonts/font = ExtResource( 4 )
-text = "Music Credits"
+custom_colors/font_color = Color( 0.2, 0.207843, 0.2, 1 )
+text = "Sound Effects"
 align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_top = 283.0
 margin_right = 360.0
-margin_bottom = 378.0
+margin_bottom = 399.0
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 margin_right = 360.0
-margin_bottom = 95.0
+margin_bottom = 116.0
 custom_constants/separation = 16
 
 [node name="BackButton" parent="HBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_right = 360.0
-margin_bottom = 95.0
 button_text = "Back"
 
 [node name="MoveTween" type="Tween" parent="."]

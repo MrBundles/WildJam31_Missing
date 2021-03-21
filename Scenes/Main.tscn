@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Main.gd" type="Script" id=1]
 [ext_resource path="res://Menus/MenuScenes/LevelSelectMenu.tscn" type="PackedScene" id=2]
@@ -9,9 +9,11 @@
 [ext_resource path="res://Menus/MenuScenes/MainMenu.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Menus/MenuScenes/CreditsMenu.tscn" type="PackedScene" id=8]
 [ext_resource path="res://UI/Background/BackgroundCanvasLayer.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/MainCamera.tscn" type="PackedScene" id=10]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
+version = 1.0
 
 [node name="GameScenes" type="Node2D" parent="."]
 
@@ -40,4 +42,9 @@ menu_scene_id = 6
 [node name="BackgroundCanvasLayer" parent="." instance=ExtResource( 9 )]
 
 [node name="SceneTransitionTween" type="Tween" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="MainCamera" parent="." instance=ExtResource( 10 )]
+position = Vector2( 960, 544 )
 [connection signal="tween_all_completed" from="SceneTransitionTween" to="." method="_on_SceneTransitionTween_tween_all_completed"]

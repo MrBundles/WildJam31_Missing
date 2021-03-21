@@ -18,6 +18,7 @@ z_index = 2
 collision_layer = 2
 script = ExtResource( 1 )
 velocity_max = Vector2( 25, 75 )
+velocity_max_push = Vector2( 10, 75 )
 h_accel = 2
 h_decel = 2
 gravity = 2
@@ -153,7 +154,3 @@ position = Vector2( -40, 24 )
 position = Vector2( 40, 24 )
 
 [node name="TransitionTween" type="Tween" parent="."]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-smoothing_enabled = true
-smoothing_speed = 1.0

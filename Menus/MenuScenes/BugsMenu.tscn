@@ -8,7 +8,7 @@
 [ext_resource path="res://Menus/Buttons/GenericButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Resources/Fonts/agencyfb-boldcondensed.ttf" type="DynamicFontData" id=7]
 
-[sub_resource type="Theme" id=2]
+[sub_resource type="Theme" id=1]
 OptionButton/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
 OptionButton/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 OptionButton/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
@@ -41,7 +41,7 @@ PopupMenu/styles/panel = null
 PopupMenu/styles/panel_disabled = null
 PopupMenu/styles/separator = null
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 32
 font_data = ExtResource( 7 )
 
@@ -57,7 +57,7 @@ menu_scene_id = 7
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.847059, 0.858824, 0.886275, 0.196078 )
+color = Color( 0.756863, 0.788235, 0.756863, 0.560784 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -80,6 +80,7 @@ __meta__ = {
 margin_right = 1000.0
 margin_bottom = 165.0
 custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.2, 0.207843, 0.2, 1 )
 text = "Bug Report"
 align = 1
 valign = 1
@@ -114,6 +115,7 @@ margin_right = 374.0
 margin_bottom = 59.0
 rect_min_size = Vector2( 215, 0 )
 custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.2, 0.207843, 0.2, 1 )
 text = "Itch Username:   "
 align = 2
 
@@ -141,6 +143,7 @@ margin_right = 374.0
 margin_bottom = 57.0
 rect_min_size = Vector2( 215, 0 )
 custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.2, 0.207843, 0.2, 1 )
 text = "Severity: "
 align = 2
 
@@ -149,8 +152,9 @@ margin_left = 390.0
 margin_right = 840.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 450, 0 )
-theme = SubResource( 2 )
+theme = SubResource( 1 )
 custom_fonts/font = ExtResource( 3 )
+text = "Low (Something Looks Wrong)"
 align = 1
 items = [ "Low (Something Looks Wrong)", null, false, 0, null, "Medium (Game is Unplayable)", null, false, 1, null, "High (Game Crashed)", null, false, 2, null ]
 selected = 0
@@ -166,6 +170,7 @@ margin_right = 1000.0
 margin_bottom = 54.0
 rect_min_size = Vector2( 215, 0 )
 custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.2, 0.207843, 0.2, 1 )
 text = "Bug Description"
 
 [node name="TextEdit" type="TextEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer/BugReportInfo/BugDescription"]
@@ -173,7 +178,7 @@ margin_top = 58.0
 margin_right = 1000.0
 margin_bottom = 408.0
 rect_min_size = Vector2( 1000, 350 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 wrap_enabled = true
 
 [node name="HTTPRequest" type="HTTPRequest" parent="VBoxContainer/HBoxContainer/VBoxContainer/BugReportInfo"]
@@ -195,7 +200,7 @@ margin_right = 360.0
 button_text = "Cancel"
 game_scene_id = -1
 menu_scene_id = 6
-rect_color = Color( 0.858824, 0.329412, 0.380392, 1 )
+rect_color = Color( 0.960784, 0.796078, 0.360784, 1 )
 
 [node name="SendButton" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer" instance=ExtResource( 6 )]
 margin_top = 132.0
@@ -206,7 +211,7 @@ button_text = "Send Report"
 game_scene_id = -1
 menu_scene_id = 6
 signal_name = "send_bug_report"
-rect_color = Color( 0.454902, 0.321569, 0.588235, 1 )
+rect_color = Color( 0.960784, 0.796078, 0.360784, 1 )
 
 [node name="MoveTween" type="Tween" parent="."]
 [connection signal="text_changed" from="VBoxContainer/HBoxContainer/VBoxContainer/BugReportInfo/Username/LineEdit" to="VBoxContainer/HBoxContainer/VBoxContainer/BugReportInfo" method="_on_Username_text_changed"]

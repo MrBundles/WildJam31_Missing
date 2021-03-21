@@ -9,8 +9,11 @@ var game_scene = 0 setget set_game_scene
 var previous_game_scene = -1
 var highest_game_scene_beaten = game_scene
 var menu_scene = GEM.MENU_SCENE_IDS.main
-var scene_transition_type = GEM.SCENE_TRANSITION_TYPES.up setget set_scene_transition_type
+var scene_transition_type = GEM.SCENE_TRANSITION_TYPES.down setget set_scene_transition_type
 var scene_transition_offset = Vector2.ZERO
+var scene_in_transition = false
+
+var debug_mode = false setget set_debug_mode
 
 
 # main functions --------------------------------------
@@ -20,6 +23,7 @@ func _ready():
 	GSM.connect("reset_game_scene", self, "_on_reset_game_scene")
 	GSM.connect("cable_charged", self, "_on_cable_charged")
 
+	self.scene_transition_type = scene_transition_type
 
 func _process(delta):
 	pass
@@ -51,10 +55,15 @@ func set_scene_transition_type(new_val):
 			scene_transition_offset = Vector2(screen_size.x + additional_offset, 0)
 
 
+func set_debug_mode(new_val):
+	debug_mode = new_val
+
+
 # signal functions --------------------------------------
 func _on_change_scene(game_scene_id, menu_scene_id):
 	if game_scene_id != -1:
 		self.game_scene = game_scene_id
+	
 	self.menu_scene = menu_scene_id
 	
 	match menu_scene_id:
@@ -83,7 +92,8 @@ func _on_reset_game_scene():
 func _on_cable_charged(cable_type, cable_id, cable_charged, _scene_transition_type):
 	if cable_type == GEM.CABLE_TYPES.end:
 		self.scene_transition_type = _scene_transition_type
-		GSM.emit_signal("change_scene", game_scene + 1, menu_scene)
 		
 		if game_scene > highest_game_scene_beaten:
 			highest_game_scene_beaten = game_scene
+		
+		GSM.emit_signal("change_scene", game_scene + 1, menu_scene)

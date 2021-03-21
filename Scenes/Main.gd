@@ -5,7 +5,7 @@ extends Node2D
 
 # variables --------------------------------------
 export var version : float = 0.4 setget set_version
-
+export var debug_mode = false setget set_debug_mode
 
 # main functions --------------------------------------
 func _ready():
@@ -23,6 +23,7 @@ func _process(delta):
 func load_game_scene(game_scene_id):
 	var game_scene_path = get_game_scene_path(game_scene_id)
 	if game_scene_path != "":
+		print("previous: " + str(GVM.previous_game_scene) + "    current: " + str(GVM.game_scene))
 		if GVM.previous_game_scene != GVM.game_scene:
 			var game_scene_instance = load(game_scene_path).instance()
 			game_scene_instance.global_position += GVM.scene_transition_offset
@@ -35,6 +36,8 @@ func load_game_scene(game_scene_id):
 				$SceneTransitionTween.interpolate_property(child, "global_position", child.global_position, child.global_position - GVM.scene_transition_offset, 1.0, Tween.TRANS_QUAD, Tween.EASE_OUT, 0.0)
 		
 			$SceneTransitionTween.start()
+			GVM.scene_in_transition = true
+			
 		else:
 			clear_game_scenes()
 			var game_scene_instance = load(game_scene_path).instance()
@@ -73,6 +76,11 @@ func set_version(new_val):
 	GVM.version = version
 
 
+func set_debug_mode(new_val):
+	debug_mode = new_val
+	GVM.debug_mode = debug_mode
+
+
 # signal functions --------------------------------------
 func _on_change_scene(game_scene_id, menu_scene_id):
 	if game_scene_id != -1:
@@ -80,6 +88,8 @@ func _on_change_scene(game_scene_id, menu_scene_id):
 
 
 func _on_SceneTransitionTween_tween_all_completed():
+	GVM.scene_in_transition = false
+	
 	for i in range($GameScenes.get_child_count()):
 		if i != 1:
 			$GameScenes.get_child(i).queue_free()

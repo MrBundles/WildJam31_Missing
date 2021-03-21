@@ -6,10 +6,11 @@ extends Interactable
 # variables --------------------------------------
 
 
-
 # main functions --------------------------------------
 func _ready():
 	# connect signals
+	
+	self.orientation = orientation
 	
 	init_door_color()
 	init_door_position()
@@ -27,6 +28,7 @@ func _physics_process(delta):
 	update_door_color()
 	update_door_position()
 	update_door_collision()
+	update_door_orientation()
 
 
 # helper functions --------------------------------------
@@ -51,8 +53,10 @@ func get_input():
 func init_door_color():
 	if active:
 		$BackgroundSprite.modulate = active_color
+		$FrameSprite.modulate = active_color.lightened(0)
 	else:
 		$BackgroundSprite.modulate = inactive_color
+		$FrameSprite.modulate = inactive_color.lightened(0)
 
 
 func init_door_position():
@@ -67,8 +71,12 @@ func update_door_color():
 	
 	if active:
 		$BackgroundSprite.modulate = lerp($BackgroundSprite.modulate, active_color, lerp_rate)
+		$FrameSprite.modulate = lerp($FrameSprite.modulate, active_color.lightened(0), lerp_rate)
 	else:
 		$BackgroundSprite.modulate = lerp($BackgroundSprite.modulate, inactive_color, lerp_rate)
+		$FrameSprite.modulate = lerp($FrameSprite.modulate, inactive_color.lightened(0), lerp_rate)
+	
+	$FrameSprite.modulate.a = 1
 
 
 func update_door_position():
@@ -103,13 +111,13 @@ func update_door_collision():
 		set_collision_mask_bit(0, not $CollisionShape2D.shape.extents.x == 0)
 
 
-# set/get functions --------------------------------------
-func set_orientation(new_val):
-	orientation = new_val
-	
+func update_door_orientation():
 	if orientation == GEM.ORIENTATIONS.horizontal:
-		pass
+		$FrameSprite.rotation_degrees = 90
 	else:
-		pass
+		$FrameSprite.rotation_degrees = 0
+
+# set/get functions --------------------------------------
+
 
 # signal functions --------------------------------------

@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://UI/UIButton/UIButton.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Fonts/UIButtonLabel.tres" type="DynamicFont" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Shaders/StandOutShader.shader" type="Shader" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
@@ -19,7 +21,21 @@ border_color = Color( 0.8, 0.8, 0.8, 0 )
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 border_color = Color( 0.8, 0.8, 0.8, 0 )
 
+[sub_resource type="ShaderMaterial" id=6]
+resource_local_to_scene = true
+shader = ExtResource( 4 )
+shader_param/threshhold = 2.0
+shader_param/color_low = Color( 0.811765, 0.858824, 0.835294, 1 )
+shader_param/color_high = Color( 0.2, 0.207843, 0.2, 1 )
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = ExtResource( 4 )
+shader_param/threshhold = 2.0
+shader_param/color_low = Color( 0.811765, 0.858824, 0.835294, 1 )
+shader_param/color_high = Color( 0.2, 0.207843, 0.2, 1 )
+
 [node name="UIButton" type="Button"]
+modulate = Color( 0.2, 0.207843, 0.2, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -43,12 +59,15 @@ rotation_speed = 175
 label = "Pause"
 
 [node name="Icon" type="Sprite" parent="."]
+material = SubResource( 6 )
 position = Vector2( 32, 72 )
+texture = ExtResource( 3 )
 
 [node name="IconAnimationTween" type="Tween" parent="."]
 
 [node name="Label" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0 )
+material = SubResource( 7 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -77.0

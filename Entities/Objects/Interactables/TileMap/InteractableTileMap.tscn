@@ -6,7 +6,8 @@
 [ext_resource path="res://Entities/Objects/Interactables/Vent/VentInteractable.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Entities/Objects/Interactables/Door/DoorInteractable.tscn" type="PackedScene" id=5]
 
-[sub_resource type="TileSet" id=4]
+[sub_resource type="TileSet" id=1]
+resource_local_to_scene = true
 0/name = "InteractableTileset.png 0"
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
@@ -51,7 +52,7 @@
 2/z_index = 0
 
 [node name="InteractableTileMap" type="TileMap"]
-tile_set = SubResource( 4 )
+tile_set = SubResource( 1 )
 format = 1
 script = ExtResource( 2 )
 interactable_instance_array = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ]

@@ -21,6 +21,7 @@ margin_right = 200.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 200, 0 )
 custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.2, 0.207843, 0.2, 1 )
 text = "Volume"
 align = 1
 

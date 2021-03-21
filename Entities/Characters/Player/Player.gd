@@ -15,6 +15,8 @@ onready var right_walk_pivot = $Feet/RightWalkPivot
 # variables --------------------------------------
 var velocity = Vector2.ZERO
 export var velocity_max = Vector2(10,10)
+export var velocity_max_push = Vector2(10,10)
+var velocity_max_init = velocity_max
 export var h_accel = 10
 export var h_decel = 10
 export var gravity = 10
@@ -45,6 +47,7 @@ func _ready():
 	GSM.connect("socket_plugged", self, "_on_socket_plugged")
 	GSM.connect("terminal_on", self, "_on_terminal_on")
 	
+	velocity_max_init = velocity_max
 	self.alive = false
 
 
@@ -74,7 +77,11 @@ func get_input():
 	
 	#wall/ceiling collisions
 	if is_on_wall():
-		velocity.x = 0
+		print("is_on_wall")
+		velocity_max.x = velocity_max_push.x
+#		velocity.x = 0
+	else:
+		velocity_max.x = velocity_max_init.x
 	
 	if is_on_ceiling():
 		velocity.y = 0
@@ -97,12 +104,14 @@ func get_input():
 
 
 func update_push():
+	var impulse_offset = Vector2(-128, 128)
 	var colliding_with_body_count = 0
 	for index in get_slide_count():
 		var collision = get_slide_collision(index)
 		if collision.collider.is_in_group("bodies"):
 			colliding_with_body_count += 1
-			collision.collider.apply_impulse(-collision.normal * push)
+			collision.collider.apply_central_impulse(-collision.normal * push)
+			collision.collider.apply_torque_impulse(-collision.normal.length() * push * (collision.collider.global_position.x - global_position.x) * 0.25)
 	
 	colliding_with_body = colliding_with_body_count > 0
 

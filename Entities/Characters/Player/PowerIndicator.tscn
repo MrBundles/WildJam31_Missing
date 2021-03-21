@@ -25,6 +25,7 @@ corner_radius_bottom_left = 4
 [node name="PowerIndicator" type="HSlider"]
 margin_right = 32.0
 margin_bottom = 16.0
+mouse_filter = 2
 custom_icons/tick = SubResource( 1 )
 custom_icons/grabber_disabled = SubResource( 1 )
 custom_icons/grabber_highlight = SubResource( 1 )

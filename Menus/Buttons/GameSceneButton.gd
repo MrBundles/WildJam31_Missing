@@ -2,7 +2,7 @@ extends GenericButton
 
 
 func _process(delta):
-	$Button.disabled = GVM.highest_game_scene_beaten + 1 < game_scene_id
+	$Button.disabled = game_scene_id > GVM.highest_game_scene_beaten + 1 and not GVM.debug_mode
 
 
 func _on_Button_button_down():

@@ -15,6 +15,11 @@ signal change_bus_mute		#bus_id, new_val
 signal bus_mute_changed		#bus_id, new_val
 signal bus_volume_changed	#bus_id, new_val
 
+signal show_hint			#hint_id
+signal hide_hint			#hint_id
+
+signal camera_shake			#camera_shake
+
 # variables --------------------------------------
 
 
