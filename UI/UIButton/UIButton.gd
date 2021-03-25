@@ -31,6 +31,7 @@ func set_icon_texture(new_val):
 
 
 func _on_UIButton_pressed():
+	$Click.play()
 	tween_rotation(0, Color(1,1,1,0))
 	GSM.emit_signal("change_scene", game_scene_id, menu_scene_id)
 	for signal_name in additional_signals:
@@ -39,10 +40,12 @@ func _on_UIButton_pressed():
 
 func _on_UIButton_mouse_entered():
 	tween_rotation(45, Color(1,1,1,1))
+	$HoverOn.play()
 
 
 func _on_UIButton_mouse_exited():
 	tween_rotation(0, Color(1,1,1,0))
+	$HoverOff.play()
 
 
 func tween_rotation(new_rotation, new_mod):

@@ -27,6 +27,7 @@ start_end_color = Color( 0.129412, 0.462745, 0.682353, 1 )
 drain_color = Color( 0.356863, 0.682353, 0.482353, 1 )
 charge_color = Color( 0.960784, 0.796078, 0.360784, 1 )
 secret_color = Color( 0.454902, 0.321569, 0.588235, 1 )
+plant_color = Color( 0.960784, 0.796078, 0.360784, 1 )
 null_color = Color( 0.960784, 0.796078, 0.360784, 1 )
 max_player_align_distance = 350
 

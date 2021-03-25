@@ -30,6 +30,10 @@ config/name="Wild Jam 31 Missing"
 run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://icon.png"
 
+[audio]
+
+output_latency.web=30
+
 [autoload]
 
 GSM="*res://Globals/GlobalSignalManager.gd"

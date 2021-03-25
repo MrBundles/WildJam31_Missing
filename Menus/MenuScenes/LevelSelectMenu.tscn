@@ -10,10 +10,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -280.0
-margin_top = -346.5
-margin_right = 280.0
-margin_bottom = 346.5
+margin_left = -229.5
+margin_top = -412.5
+margin_right = 229.5
+margin_bottom = 412.5
 custom_constants/separation = 16
 script = ExtResource( 4 )
 __meta__ = {
@@ -21,7 +21,7 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="."]
-margin_right = 560.0
+margin_right = 459.0
 margin_bottom = 165.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.2, 0.207843, 0.2, 1 )
@@ -29,110 +29,107 @@ text = "Level Select"
 align = 1
 valign = 1
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
 margin_top = 181.0
-margin_right = 560.0
+margin_right = 459.0
 margin_bottom = 561.0
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer2"]
+margin_left = 23.0
+margin_right = 435.0
+margin_bottom = 380.0
 custom_constants/vseparation = 16
 custom_constants/hseparation = 32
-columns = 4
+columns = 3
 
-[node name="GameSceneButton1" parent="GridContainer" instance=ExtResource( 1 )]
+[node name="GameSceneButton1" parent="HBoxContainer2/GridContainer" instance=ExtResource( 1 )]
 game_scene_id = 1
 
-[node name="GameSceneButton2" parent="GridContainer" instance=ExtResource( 1 )]
+[node name="GameSceneButton2" parent="HBoxContainer2/GridContainer" instance=ExtResource( 1 )]
 margin_left = 148.0
 margin_right = 264.0
 button_text = "2"
 game_scene_id = 2
 
-[node name="GameSceneButton3" parent="GridContainer" instance=ExtResource( 1 )]
+[node name="GameSceneButton3" parent="HBoxContainer2/GridContainer" instance=ExtResource( 1 )]
 margin_left = 296.0
 margin_right = 412.0
 button_text = "3"
 game_scene_id = 3
 
-[node name="GameSceneButton4" parent="GridContainer" instance=ExtResource( 1 )]
-margin_left = 444.0
-margin_right = 560.0
+[node name="GameSceneButton4" parent="HBoxContainer2/GridContainer" instance=ExtResource( 1 )]
+margin_top = 132.0
+margin_bottom = 248.0
 button_text = "4"
 game_scene_id = 4
 
-[node name="GameSceneButton5" parent="GridContainer" instance=ExtResource( 1 )]
+[node name="GameSceneButton5" parent="HBoxContainer2/GridContainer" instance=ExtResource( 1 )]
+margin_left = 148.0
 margin_top = 132.0
+margin_right = 264.0
 margin_bottom = 248.0
 button_text = "5"
 game_scene_id = 5
 
-[node name="GameSceneButton6" parent="GridContainer" instance=ExtResource( 1 )]
-margin_left = 148.0
+[node name="GameSceneButton6" parent="HBoxContainer2/GridContainer" instance=ExtResource( 1 )]
+margin_left = 296.0
 margin_top = 132.0
-margin_right = 264.0
+margin_right = 412.0
 margin_bottom = 248.0
 button_text = "6"
 game_scene_id = 6
 
-[node name="GameSceneButton7" parent="GridContainer" instance=ExtResource( 1 )]
-margin_left = 296.0
-margin_top = 132.0
-margin_right = 412.0
-margin_bottom = 248.0
+[node name="GameSceneButton7" parent="HBoxContainer2/GridContainer" instance=ExtResource( 1 )]
+margin_top = 264.0
+margin_bottom = 380.0
 button_text = "7"
 game_scene_id = 7
 
-[node name="GameSceneButton8" parent="GridContainer" instance=ExtResource( 1 )]
-margin_left = 444.0
-margin_top = 132.0
-margin_right = 560.0
-margin_bottom = 248.0
-button_text = "8"
-game_scene_id = 8
-
-[node name="GameSceneButton9" parent="GridContainer" instance=ExtResource( 1 )]
-margin_top = 264.0
-margin_bottom = 380.0
-button_text = "9"
-game_scene_id = 9
-
-[node name="GameSceneButton10" parent="GridContainer" instance=ExtResource( 1 )]
+[node name="GameSceneButton8" parent="HBoxContainer2/GridContainer" instance=ExtResource( 1 )]
 margin_left = 148.0
 margin_top = 264.0
 margin_right = 264.0
 margin_bottom = 380.0
-button_text = "10"
-game_scene_id = 10
+button_text = "8"
+game_scene_id = 8
 
-[node name="GameSceneButton11" parent="GridContainer" instance=ExtResource( 1 )]
+[node name="GameSceneButton9" parent="HBoxContainer2/GridContainer" instance=ExtResource( 1 )]
 margin_left = 296.0
 margin_top = 264.0
 margin_right = 412.0
 margin_bottom = 380.0
-button_text = "11"
-game_scene_id = 11
-
-[node name="GameSceneButton12" parent="GridContainer" instance=ExtResource( 1 )]
-margin_left = 444.0
-margin_top = 264.0
-margin_right = 560.0
-margin_bottom = 380.0
-button_text = "12"
-game_scene_id = 12
+button_text = "9"
+game_scene_id = 9
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_top = 577.0
-margin_right = 560.0
-margin_bottom = 693.0
+margin_right = 459.0
+margin_bottom = 825.0
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-margin_left = 100.0
-margin_right = 460.0
-margin_bottom = 116.0
+margin_left = 49.0
+margin_right = 409.0
+margin_bottom = 248.0
 custom_constants/separation = 16
 alignment = 1
 
-[node name="BackButton" parent="HBoxContainer/VBoxContainer" instance=ExtResource( 3 )]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 margin_right = 360.0
+margin_bottom = 116.0
+alignment = 1
+
+[node name="GameSceneButton10" parent="HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 122.0
+margin_right = 238.0
+button_text = "10"
+game_scene_id = 10
+
+[node name="BackButton" parent="HBoxContainer/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 132.0
+margin_right = 360.0
+margin_bottom = 248.0
 button_text = "Back"
 
 [node name="MoveTween" type="Tween" parent="."]

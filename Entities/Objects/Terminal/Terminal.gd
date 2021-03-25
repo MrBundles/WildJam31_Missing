@@ -8,6 +8,7 @@ export var terminal_id = 0
 export var on = false setget set_on
 export var on_color = Color(1,1,1,1)
 export var off_color = Color(1,1,1,1)
+export var hint_id = -1
 
 # main functions --------------------------------------
 func _ready():
@@ -32,12 +33,21 @@ func set_on(new_val):
 	
 	if on:
 		self_modulate = on_color
+		
 		if has_node("MarginContainer/OffRect"):
 			$MarginContainer/OffRect.hide()
+		
+		if hint_id != -1:
+			GSM.emit_signal("show_hint", hint_id)
+		
 	else:
 		self_modulate = off_color
+		
 		if has_node("MarginContainer/OffRect"):
 			$MarginContainer/OffRect.show()
+		
+		if hint_id != -1:
+			GSM.emit_signal("hide_hint", hint_id)
 
 
 # signal functions --------------------------------------

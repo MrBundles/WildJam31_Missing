@@ -5,6 +5,7 @@ extends RigidBody2D
 
 
 # variables --------------------------------------
+export var can_push = true setget set_can_push
 export var size = Vector2(4,4) setget set_size
 var size_mult = Vector2(64,64)
 export var color = Color(1,1,1,1) setget set_color
@@ -45,6 +46,10 @@ func set_color(new_val):
 	color = new_val
 	
 	modulate = color
+
+
+func set_can_push(new_val):
+	can_push = new_val
 
 
 # signal functions --------------------------------------

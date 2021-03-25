@@ -33,13 +33,14 @@ valign = 1
 margin_top = 181.0
 margin_right = 884.0
 margin_bottom = 239.0
+bus_id = 1
 slider_label = "Music Volume"
 
 [node name="EffectsSlider" parent="." instance=ExtResource( 4 )]
 margin_top = 255.0
 margin_right = 884.0
 margin_bottom = 313.0
-bus_id = 1
+bus_id = 2
 slider_label = "Effects Volume"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]

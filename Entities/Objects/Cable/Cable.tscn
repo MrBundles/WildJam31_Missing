@@ -1,16 +1,24 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Entities/Objects/Cable/Cable.gd" type="Script" id=1]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array(  )
+}
 
 [node name="Cable" type="Path2D"]
 self_modulate = Color( 1, 1, 1, 1 )
 scale = Vector2( 1.11111, 1 )
 z_index = -1
+curve = SubResource( 1 )
 script = ExtResource( 1 )
+cable_width = 20
 start_end_color = Color( 0.129412, 0.462745, 0.682353, 1 )
 drain_color = Color( 0.356863, 0.682353, 0.482353, 1 )
 charge_color = Color( 0.960784, 0.796078, 0.360784, 1 )
 secret_color = Color( 0.454902, 0.321569, 0.588235, 1 )
+plant_color = Color( 0.960784, 0.796078, 0.360784, 1 )
 null_color = Color( 0.505882, 0.533333, 0.517647, 1 )
 
 [node name="Tween" type="Tween" parent="."]

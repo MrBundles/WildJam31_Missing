@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/MenuButtonHoverOn.wav-0d42377cb736110e0ec3af9d9975f9c1.sample"
+
+[deps]
+
+source_file="res://Resources/Audio/Effects/MenuButtonHoverOn.wav"
+dest_files=[ "res://.import/MenuButtonHoverOn.wav-0d42377cb736110e0ec3af9d9975f9c1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

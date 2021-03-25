@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/TileUndetectMouse.wav-4d0ceb55e384dcc6e61b9e179cf98392.sample"
+
+[deps]
+
+source_file="res://Resources/Audio/Effects/TileUndetectMouse.wav"
+dest_files=[ "res://.import/TileUndetectMouse.wav-4d0ceb55e384dcc6e61b9e179cf98392.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

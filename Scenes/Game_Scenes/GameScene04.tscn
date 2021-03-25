@@ -776,34 +776,34 @@ socket_type = 1
 curve = SubResource( 33 )
 cable_id = 2
 cable_type = 1
-scene_transition_type = 1
 
-[node name="SocketSecret103" parent="." instance=ExtResource( 5 )]
+[node name="SocketSecret104" parent="." instance=ExtResource( 5 )]
 position = Vector2( 64, 384 )
-socket_id = 103
+socket_id = 104
 socket_type = 4
 
-[node name="CableSecret103" parent="." instance=ExtResource( 4 )]
+[node name="CableSecret104" parent="." instance=ExtResource( 4 )]
 curve = SubResource( 34 )
-cable_id = 103
+cable_id = 104
 cable_type = 4
 power_progress_mult_debug = 250
 
 [node name="HintArea1" parent="." instance=ExtResource( 7 )]
 position = Vector2( 704, 896 )
 hint_id = 1
-one_shot_trigger = true
+trigger_once = true
 hint_area_size = Vector2( 125, 125 )
 
 [node name="HintDialogue1" parent="." instance=ExtResource( 3 )]
-self_modulate = Color( 0.960784, 0.796078, 0.360784, 1 )
+self_modulate = Color( 0.909804, 0.454902, 0.380392, 1 )
 margin_left = 832.0
-margin_top = 608.0
-margin_right = 1088.0
-margin_bottom = 736.0
+margin_top = 480.0
+margin_right = 1120.0
+margin_bottom = 608.0
 hint_id = 1
+transition_duration = 1.0
 hint_message = "So Strong"
-box_color = Color( 0.960784, 0.796078, 0.360784, 1 )
+box_color = Color( 0.909804, 0.454902, 0.380392, 1 )
 
 [node name="HintArea2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1408, -384 )

@@ -10,10 +10,10 @@ button_text = "Button"
 rect_color = Color( 0.960784, 0.796078, 0.360784, 1 )
 
 [node name="ColorRectLeft" parent="." index="0"]
-color = Color( 0.356863, 0.682353, 0.482353, 1 )
+color = Color( 0.960784, 0.796078, 0.360784, 1 )
 
 [node name="Button" parent="." index="1"]
 text = "Button"
 
 [node name="ColorRectRight" parent="." index="2"]
-color = Color( 0.356863, 0.682353, 0.482353, 1 )
+color = Color( 0.960784, 0.796078, 0.360784, 1 )

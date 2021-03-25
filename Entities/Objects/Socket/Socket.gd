@@ -14,6 +14,7 @@ export var start_end_color = Color(1,1,1,1)
 export var drain_color = Color(1,1,1,1)
 export var charge_color = Color(1,1,1,1)
 export var secret_color = Color(1,1,1,1)
+export var plant_color = Color(1,1,1,1)
 export var null_color = Color(1,1,1,1)
 var battery_icon_color = Color(1,1,1,1)
 var player = null
@@ -37,11 +38,17 @@ func _process(delta):
 	
 	if socket_type != GEM.SOCKET_TYPES.start:
 		get_input(delta)
+	
+	update_visibility()
 
 
 # helper functions --------------------------------------
 func get_input(delta):
 	if player and Input.is_action_just_pressed("plug"):
+		#don't unplug socket if "end type" and already plugged in
+		if socket_type == GEM.SOCKET_TYPES.end and tab_active:
+			return
+		
 		player.socket_align_x = global_position.x
 		self.tab_active = player.alive
 
@@ -65,8 +72,26 @@ func init_socket():
 			battery_icon_color = secret_color
 			$BatteryIconSprite.hide()
 			$SocketSprites/SocketBackground.modulate = null_color
+		GEM.SOCKET_TYPES.plant:
+			battery_icon_color = plant_color
+			$SocketSprites/SocketBackground.modulate = null_color
+			GVM.plant_socket_present = true
 	
 	$BatteryIconSprite.modulate = battery_icon_color
+
+
+func update_visibility():
+	if socket_type != GEM.SOCKET_TYPES.end:
+		return
+	
+	var target_visibility
+	if GVM.plant_socket_present:
+		target_visibility = 0.0
+	else:
+		target_visibility = 1.0
+	
+	var lerp_rate = 0.2
+	modulate.a = lerp(modulate.a, target_visibility, lerp_rate)
 
 
 # set/get functions --------------------------------------
@@ -118,6 +143,8 @@ func set_plugged_in(new_val):
 				$DelayTimer.start()
 			GEM.SOCKET_TYPES.secret:
 				$SocketSprites/SocketLight.modulate = secret_color
+			GEM.SOCKET_TYPES.plant:
+				$SocketSprites/SocketLight.modulate = plant_color
 			GEM.SOCKET_TYPES.end:
 				$SocketSprites/SocketLight.modulate = start_end_color
 	else:
@@ -137,6 +164,9 @@ func _on_cable_charged(cable_type, cable_id, cable_charged, scene_transition_typ
 
 
 func _on_Socket_body_entered(body):
+	if socket_type == GEM.SOCKET_TYPES.end and GVM.plant_socket_present:
+		return
+	
 	if body.is_in_group("player"):
 		if socket_type != GEM.SOCKET_TYPES.start:
 			self.active = true

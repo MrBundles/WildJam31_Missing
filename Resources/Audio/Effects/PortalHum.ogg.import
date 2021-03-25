@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/PortalHum.ogg-2dd8a51a35b3e290ee2aa0105ccd0b99.oggstr"
+
+[deps]
+
+source_file="res://Resources/Audio/Effects/PortalHum.ogg"
+dest_files=[ "res://.import/PortalHum.ogg-2dd8a51a35b3e290ee2aa0105ccd0b99.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

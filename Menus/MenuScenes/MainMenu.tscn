@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Resources/Fonts/agencyfb-boldcondensed.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Menus/SubLabels/SubLabels.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Menus/MenuScenes/Menu.gd" type="Script" id=3]
 [ext_resource path="res://Menus/Buttons/MenuButton.tscn" type="PackedScene" id=4]
 
@@ -14,13 +15,16 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -293.5
-margin_top = -424.5
+margin_top = -450.5
 margin_right = 293.5
-margin_bottom = 424.5
+margin_bottom = 450.5
+custom_constants/separation = 32
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MoveTween" type="Tween" parent="."]
 
 [node name="Title" type="Label" parent="."]
 margin_right = 587.0
@@ -33,9 +37,9 @@ align = 1
 valign = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_top = 199.0
+margin_top = 227.0
 margin_right = 587.0
-margin_bottom = 711.0
+margin_bottom = 739.0
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
@@ -70,4 +74,7 @@ margin_bottom = 512.0
 button_text = "Quit"
 menu_scene_id = 5
 
-[node name="MoveTween" type="Tween" parent="."]
+[node name="SubLabels" parent="." instance=ExtResource( 2 )]
+margin_top = 771.0
+margin_bottom = 901.0
+alignment = 1

@@ -29,10 +29,12 @@ func set_button_text(new_val):
 func _on_Button_mouse_entered():
 	if not $Button.disabled:
 		color_rect_tween(color_rect_hover_width)
+		$MenuButtonHoverOn.play()
 
 
 func _on_Button_mouse_exited():
 	color_rect_tween(0)
+	$MenuButtonHoverOff.play()
 
 
 func color_rect_tween(new_width):
@@ -46,6 +48,7 @@ func _on_Button_button_down():
 	color_rect_tween(color_rect_pressed_width)
 	GSM.emit_signal(signal_name)
 	GSM.emit_signal("change_scene", game_scene_id, menu_scene_id)
+	$MenuButtonClick.play()
 
 
 func _on_Button_button_up():

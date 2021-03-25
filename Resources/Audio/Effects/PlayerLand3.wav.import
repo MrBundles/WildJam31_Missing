@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PlayerLand3.wav-17adb09b9a599ffb135198618762219e.sample"
+
+[deps]
+
+source_file="res://Resources/Audio/Effects/PlayerLand3.wav"
+dest_files=[ "res://.import/PlayerLand3.wav-17adb09b9a599ffb135198618762219e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

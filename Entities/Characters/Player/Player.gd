@@ -110,6 +110,10 @@ func update_push():
 		var collision = get_slide_collision(index)
 		if collision.collider.is_in_group("bodies"):
 			colliding_with_body_count += 1
+			
+			if collision.collider.has_method("set_can_push") and not collision.collider.can_push:
+				return	#if object has an option to be pushed or not, and "can push" is false, do not push the object
+			
 			collision.collider.apply_central_impulse(-collision.normal * push)
 			collision.collider.apply_torque_impulse(-collision.normal.length() * push * (collision.collider.global_position.x - global_position.x) * 0.25)
 	

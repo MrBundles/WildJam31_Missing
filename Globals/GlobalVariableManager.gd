@@ -12,6 +12,8 @@ var menu_scene = GEM.MENU_SCENE_IDS.main
 var scene_transition_type = GEM.SCENE_TRANSITION_TYPES.down setget set_scene_transition_type
 var scene_transition_offset = Vector2.ZERO
 var scene_in_transition = false
+var plant_socket_present = false
+var secret_array = [-1]
 
 var debug_mode = false setget set_debug_mode
 
@@ -90,10 +92,18 @@ func _on_reset_game_scene():
 
 
 func _on_cable_charged(cable_type, cable_id, cable_charged, _scene_transition_type):
-	if cable_type == GEM.CABLE_TYPES.end:
-		self.scene_transition_type = _scene_transition_type
+	match cable_type:
+		GEM.CABLE_TYPES.end:
+			self.scene_transition_type = _scene_transition_type
+			
+			if game_scene > highest_game_scene_beaten:
+				highest_game_scene_beaten = game_scene
+			
+			GSM.emit_signal("change_scene", game_scene + 1, menu_scene)
 		
-		if game_scene > highest_game_scene_beaten:
-			highest_game_scene_beaten = game_scene
+		GEM.CABLE_TYPES.plant:
+			plant_socket_present = false
 		
-		GSM.emit_signal("change_scene", game_scene + 1, menu_scene)
+		GEM.CABLE_TYPES.secret:
+			if cable_charged and not cable_id in secret_array:
+				secret_array.append(cable_id)

@@ -4,7 +4,9 @@ extends Path2D
 
 
 # variables --------------------------------------
+export var start_trigger = false
 export var cable_id = 0
+export var hint_id = -1
 export(GEM.CABLE_TYPES) var cable_type = GEM.CABLE_TYPES.drain
 var power_progress = 0.0
 var cable_charged = false
@@ -18,6 +20,7 @@ export var start_end_color = Color(1,1,1,1)
 export var drain_color = Color(1,1,1,1)
 export var charge_color = Color(1,1,1,1)
 export var secret_color = Color(1,1,1,1)
+export var plant_color = Color(1,1,1,1)
 export var null_color = Color(1,1,1,1)
 
 export var active = false setget set_active
@@ -30,6 +33,9 @@ func _ready():
 	
 	if GVM.debug_mode:
 		power_progress_mult = power_progress_mult_debug
+	
+	if start_trigger and cable_id in GVM.secret_array:
+		self.active = true
 	
 	init_cable()
 	
@@ -68,6 +74,8 @@ func init_cable():
 		GEM.CABLE_TYPES.secret:
 			on_color = secret_color
 			off_color.a = 0
+		GEM.CABLE_TYPES.plant:
+			on_color = plant_color
 
 
 # set/get functions --------------------------------------
@@ -93,9 +101,20 @@ func set_active(new_val):
 # signal functions --------------------------------------
 func _on_socket_plugged(socket_type, socket_id, plugged_in):
 	if socket_id == cable_id and cable_type != GEM.CABLE_TYPES.start:
+		
+		if cable_type == GEM.CABLE_TYPES.plant and not plugged_in:
+			return
+			
 		self.active = plugged_in
 
 
 func _on_Tween_tween_all_completed():
 	if power_progress == 1.0:
 		GSM.emit_signal("cable_charged", cable_type, cable_id, true, scene_transition_type)
+		
+		if hint_id != -1:
+			GSM.emit_signal("show_hint", hint_id)
+			
+	else:
+		if hint_id != -1:
+			 GSM.emit_signal("hide_hint", hint_id)

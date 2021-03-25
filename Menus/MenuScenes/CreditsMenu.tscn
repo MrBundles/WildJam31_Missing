@@ -10,10 +10,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -180.0
-margin_top = -199.5
-margin_right = 180.0
-margin_bottom = 199.5
+margin_left = -631.0
+margin_top = -331.5
+margin_right = 631.0
+margin_bottom = 331.5
 custom_constants/separation = 16
 script = ExtResource( 3 )
 __meta__ = {
@@ -21,7 +21,7 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="."]
-margin_right = 360.0
+margin_right = 1262.0
 margin_bottom = 165.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.2, 0.207843, 0.2, 1 )
@@ -31,62 +31,77 @@ valign = 1
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
 margin_top = 181.0
-margin_right = 360.0
-margin_bottom = 267.0
+margin_right = 1262.0
+margin_bottom = 487.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HSplitContainer"]
-margin_right = 174.0
-margin_bottom = 86.0
+margin_right = 625.0
+margin_bottom = 306.0
+rect_min_size = Vector2( 625, 0 )
 size_flags_horizontal = 3
 
 [node name="Programming" type="Label" parent="HSplitContainer/VBoxContainer2"]
-margin_right = 174.0
-margin_bottom = 41.0
+margin_right = 625.0
+margin_bottom = 129.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.2, 0.207843, 0.2, 1 )
-text = "Programming"
+text = "- PROGRAMMING -
+All Code Created in GDScript during Jam Period
+"
 align = 1
 
-[node name="Art" type="Label" parent="HSplitContainer/VBoxContainer2"]
-margin_top = 45.0
-margin_right = 174.0
-margin_bottom = 86.0
+[node name="Music" type="Label" parent="HSplitContainer/VBoxContainer2"]
+margin_top = 133.0
+margin_right = 625.0
+margin_bottom = 306.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.2, 0.207843, 0.2, 1 )
-text = "Visuals"
+text = "- MUSIC -
+Lightless Dawn by Kevin MacLeod
+Link: https://incompetech.filmmusic.io/song/3982-lightless-dawn
+License: https://filmmusic.io/standard-license"
 align = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
-margin_left = 186.0
-margin_right = 360.0
-margin_bottom = 86.0
+margin_left = 637.0
+margin_right = 1262.0
+margin_bottom = 306.0
+rect_min_size = Vector2( 625, 0 )
 size_flags_horizontal = 3
 
-[node name="Music" type="Label" parent="HSplitContainer/VBoxContainer"]
-margin_right = 174.0
-margin_bottom = 41.0
+[node name="Art" type="Label" parent="HSplitContainer/VBoxContainer"]
+margin_right = 625.0
+margin_bottom = 129.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.2, 0.207843, 0.2, 1 )
-text = "Music"
+text = "- VISUALS -
+All art created in Inkscape during Jam Period
+"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Effects" type="Label" parent="HSplitContainer/VBoxContainer"]
-margin_top = 45.0
-margin_right = 174.0
-margin_bottom = 86.0
+margin_top = 133.0
+margin_right = 625.0
+margin_bottom = 262.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0.2, 0.207843, 0.2, 1 )
-text = "Sound Effects"
+text = "- SFX -
+All Sound Effects downloaded from Zapsplat.com
+Audio Cleanup/Editing done in FL-Studio"
 align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_top = 283.0
-margin_right = 360.0
-margin_bottom = 399.0
+margin_top = 503.0
+margin_right = 1262.0
+margin_bottom = 619.0
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-margin_right = 360.0
+margin_left = 451.0
+margin_right = 811.0
 margin_bottom = 116.0
 custom_constants/separation = 16
 
